@@ -15,6 +15,11 @@ CREATE TABLE User (
 CREATE TABLE Ticket (
     ticketId	INTEGER PRIMARY KEY,
     description	VARCHAR(50),
+    title	VARCHAR(50),
+    status	VARCHAR(50),
+    department	VARCHAR(50),
+    priority	VARCHAR(50),
+    label	VARCHAR(50),
     date	Date
 );
 
