@@ -13,6 +13,8 @@ function authenticate($username, $password){
     if($user){
 	$_SESSION['username'] = $username;
 	$_SESSION['loggedin'] = true;
+	$_SESSION['name'] = $user[2];
+	$_SESSION['email'] = $user[4];
 	echo "logged in";
 	header('Location: ../home.php');
 	exit;
@@ -24,11 +26,9 @@ function authenticate($username, $password){
 }
 session_start(); // start a new session
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-echo $username;
-echo $password;
 if($username && $password) authenticate($username, $password);
 else header('Location: ../index.php');
 
