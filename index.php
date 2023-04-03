@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Super Legit News</title>    
+    <title>Trouble Tickets</title>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
@@ -12,7 +12,7 @@
   </head>
   <body>
     <h1>login</h1>
-    <form action="index.php" method="post">
+    <form action="database/authenticate.php" method="post">
 	<input type="text" name="username" >
 	<input type="password" name="password" >
 	<input type="submit" name="submit" value="login">
@@ -21,18 +21,9 @@
   </body>
 </html>
 
+
 <?php
-session_start(); // start a new session
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // get form data
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-}
-
-require_once('database/authenticate.php');
-if($username && $password) authenticate($username, $password);
-
-
+$invalidAuthentication = $_GET['invalid'];
+if($invalidAuthentication) echo '<p>' . 'invalid username or password' . '</p>';
 ?>
 
