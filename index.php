@@ -11,13 +11,13 @@
     <link href="forms.css" rel="stylesheet">
   </head>
   <body>
-    <h1>trouble tickets </h1>
+    <h1>login</h1>
     <form action="index.php" method="post">
 	<input type="text" name="username" >
 	<input type="password" name="password" >
 	<input type="submit" name="submit" value="login">
     </form>
-    <a href="register.php">register</a>
+    <a href="database/register.php">register</a>
   </body>
 </html>
 
@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // get form data
     $username = $_POST['username'];
     $password = $_POST['password'];
-    echo "popo";
 }
 
 require_once('database/authenticate.php');
