@@ -20,21 +20,23 @@ CREATE TABLE Ticket (
     department	VARCHAR(50),
     priority	VARCHAR(50),
     label	VARCHAR(50),
+    --assignedAgent
     date	Date
 );
 
 
-CREATE TABLE Client (
-  id INTEGER PRIMARY KEY,
-  user_id INTEGER,
-  FOREIGN KEY (user_id) REFERENCES users(id)
-);
 
 CREATE TABLE Agent (
   id INTEGER PRIMARY KEY,
-  client_id INTEGER,
+  user_id INTEGER,
   department VARCHAR(20),
-  FOREIGN KEY (client_id) REFERENCES clients(id)
+  FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+CREATE TABLE Admin (
+  id INTEGER PRIMARY KEY,
+  agent_id INTEGER,
+  FOREIGN KEY (agent_id) REFERENCES agent(id)
 );
 
 CREATE TABLE UserTickets (
