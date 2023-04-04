@@ -16,14 +16,16 @@ CREATE TABLE User (
 
 CREATE TABLE Ticket (
     ticketId	INTEGER PRIMARY KEY,
-    description	VARCHAR(50),
     title	VARCHAR(50),
+    text VARCHAR(500),
+    creator INTEGER,
     status	VARCHAR(50),
     department	VARCHAR(50),
     priority	VARCHAR(50),
     label	VARCHAR(50),
     --assignedAgent
-    date	Date
+    date	Date,
+    FOREIGN KEY (creator) REFERENCES User(id)
 );
 
 

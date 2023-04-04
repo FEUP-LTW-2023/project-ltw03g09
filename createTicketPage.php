@@ -8,10 +8,10 @@
     <h1>Ticket page</h1>
     <p>This is where tickets are created</p>
 
-    <form action="profilePage.php" method="post">  
+    <form action="database/createTicket.php" method="post">  
 	    <input type="text" name="title" placeholder="title">
         <p/>
-	    <input list="departments" name="departments" placeholder="department">
+	    <input list="departments" name="department" placeholder="department">
 	    <input type="text" name="label" placeholder="label (ex: #feupRulzzz)">
         <datalist id="departments">
             <?php
@@ -24,7 +24,7 @@
             ?>
         </datalist>
         <p/>
-        <textarea rows="10" cols="50" placeholder="text"></textarea>
+        <textarea name="text" rows="10" cols="50" placeholder="text"></textarea>
         <p/>
 	    <input type="submit" name="submit" value="submit">
     </form>
