@@ -1,3 +1,14 @@
+<?php
+
+session_start(); // start a new session
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // user isn't logged in, redirect to login page
+    header('Location: index.php');
+    exit;
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,10 +26,7 @@
 	    <input type="text" name="label" placeholder="label (ex: #feupRulzzz)">
         <datalist id="departments">
             <?php
-                require_once('database/fetchDepartments.php');
-                $departments = fetchDepartments();
-                echo $departments[0];
-                foreach($departments as $department){
+                foreach($_SESSION['departments'] as $department){
                     echo '<option value="'.$department.'"/>';
                 }
             ?>

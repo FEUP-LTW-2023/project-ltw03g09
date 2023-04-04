@@ -12,9 +12,6 @@ function fetchDepartments(){
     foreach($result as $r){
         $departments[] = $r[0];
     }
-    foreach($departments as $d){
-        echo $d;
-    }
     return $departments;
 }
 

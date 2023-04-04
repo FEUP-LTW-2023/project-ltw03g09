@@ -8,6 +8,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 // user is logged in, show page content
+
+
+
 ?>
 
 <!DOCTYPE html>
