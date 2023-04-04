@@ -19,9 +19,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
     <p>This is the homepage.</p>
 
-    <form action="profilePage.php" method="get">
-	<input type="submit" name="submit" value="profile page">
+    <form action="profilePage.php" method="post">
+	    <input type="submit" name="submit" value="profile page">
     </form>
+    <form action="createTicketPage.php" method="post">
+	    <input type="submit" name="submit" value="create ticket">
+    </form>
+
 
     <a href="logout.php">Logout</a>
 </body>
