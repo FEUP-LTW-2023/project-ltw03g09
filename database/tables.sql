@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Ticket;
 DROP TABLE IF EXISTS Client;
 DROP TABLE IF EXISTS Agent;
+DROP TABLE IF EXISTS Admin;
+DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS UserTickets;
 CREATE TABLE User (
     id		INTEGER PRIMARY KEY,
@@ -14,23 +16,29 @@ CREATE TABLE User (
 
 CREATE TABLE Ticket (
     ticketId	INTEGER PRIMARY KEY,
-    description	VARCHAR(50),
     title	VARCHAR(50),
+    text VARCHAR(500),
+    creator INTEGER,
     status	VARCHAR(50),
     department	VARCHAR(50),
     priority	VARCHAR(50),
     label	VARCHAR(50),
     --assignedAgent
-    date	Date
+    date	Date,
+    FOREIGN KEY (creator) REFERENCES User(id)
 );
 
 
+CREATE TABLE Department (
+  name	VARCHAR(20) PRIMARY KEY
+);
 
 CREATE TABLE Agent (
   id INTEGER PRIMARY KEY,
   user_id INTEGER,
   department VARCHAR(20),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (department) REFERENCES Department(name)
 );
 
 CREATE TABLE Admin (
@@ -38,6 +46,7 @@ CREATE TABLE Admin (
   agent_id INTEGER,
   FOREIGN KEY (agent_id) REFERENCES agent(id)
 );
+
 
 CREATE TABLE UserTickets (
     username	REFERENCES User,

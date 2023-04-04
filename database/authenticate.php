@@ -15,6 +15,8 @@ function authenticate($username, $password){
 	$_SESSION['loggedin'] = true;
 	$_SESSION['name'] = $user[2];
 	$_SESSION['email'] = $user[4];
+	$_SESSION['userId'] = $user[0];
+
 	echo "logged in";
 	header('Location: ../home.php');
 	exit;
