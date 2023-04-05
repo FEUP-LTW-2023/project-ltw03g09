@@ -2,7 +2,22 @@
 
 # to test:
 
-on root directory: ``php -S localhost:9000``
+## create database:
+
+on root:
+
+```
+sqlite3 database/data.db
+sqlite> .read database/tables.sql
+sqlite> .read database/inserts.sql
+sqlite> .exit
+```
+
+## create php server
+
+on root: ``php -S localhost:9000``
+
+## try it out
 
 open browser and go to ``localhost:9000``
 
