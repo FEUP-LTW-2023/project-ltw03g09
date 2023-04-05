@@ -17,6 +17,8 @@ sqlite> .exit
 
 on root: ``php -S localhost:9000``
 
+## try it out
+
 open browser and go to ``localhost:9000``
 
 username: ``username``
