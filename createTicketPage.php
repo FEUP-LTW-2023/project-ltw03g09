@@ -26,6 +26,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 	    <input type="text" name="label" placeholder="label (ex: #feupRulzzz)">
         <datalist id="departments">
             <?php
+                $departments = $_SESSION['departments'];  
                 foreach($_SESSION['departments'] as $department){
                     echo '<option value="'.$department.'"/>';
                 }

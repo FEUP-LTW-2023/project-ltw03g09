@@ -20,6 +20,7 @@ function authenticate($username, $password){
 		require_once('fetchDepartments.php');
 		
 		$departments = fetchDepartments();
+		$_SESSION['departments'] = $departments;
 
 		echo "logged in";
 		header('Location: ../home.php');
