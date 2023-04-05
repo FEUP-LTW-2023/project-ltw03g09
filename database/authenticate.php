@@ -19,8 +19,10 @@ function authenticate($username, $password){
 
 		require_once('fetchDepartments.php');
 		
+		//this probably shouldnt be here
 		$departments = fetchDepartments();
-		$_SESSION['departments'] = $departments; //this should be a global variable. not a session variable
+		//this should be a global variable. not a session variable
+		$_SESSION['departments'] = $departments; 
 
 		echo "logged in";
 		header('Location: ../home.php');
