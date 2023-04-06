@@ -21,7 +21,7 @@ $tickets = fetchTickets($_SESSION['userId']);
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+    <h1>Welcome, <?php echo $_SESSION['hierarchy']." ".$_SESSION['username']; ?>!</h1>
     <p>This is the homepage.</p>
 
     <form action="profilePage.php" method="post">
