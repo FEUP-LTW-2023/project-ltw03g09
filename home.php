@@ -41,15 +41,18 @@ $tickets = fetchTickets($_SESSION['userId']);
             $label = $ticket[7];
             $username = $ticket[9];
         
-            echo "<div id='ticket'>";
-            echo "<h3>".$title."</h3>";
-            echo "<p>".$text."</p>";
-            echo "<div id='ticketSocials'>";
-                echo "<p>username: ".$username."</p>";    
-                echo "<p>department: ".$department."</p>";    
-                echo "<p>label: ".$label."</p>";    
-            echo "</div>";
-            echo "</div>";
+            $html = <<<HTML
+                <div id='ticket'>
+                    <h3>$title</h3>
+                    <p>$text</p>
+                    <div id='ticketSocials'>
+                        <p>username: $username</p>    
+                        <p>department: $department</p>    
+                        <p>label: $label</p>   
+                    </div>
+                </div>
+            HTML;
+            echo $html;
         }
     ?>
     
