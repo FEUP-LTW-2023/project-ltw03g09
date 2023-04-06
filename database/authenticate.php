@@ -6,7 +6,11 @@ function authenticate($username, $password){
 
     $db = getDatabaseConnection();
 
-    $stmt = $db->prepare("SELECT * FROM user WHERE username = ? AND password = ?");
+    $stmt = $db->prepare("SELECT user.* , agent.id AS agent_id, admin.id AS admin_id
+		from user
+		LEFT JOIN agent ON user.id = agent.user_id
+		LEFT JOIN admin ON agent.id = admin.agent_id
+		WHERE user.username = ? AND user.password = ?");
     $stmt->execute(array($username, $password));
     $user = $stmt->fetch();
 
@@ -16,6 +20,13 @@ function authenticate($username, $password){
 		$_SESSION['name'] = $user[2];
 		$_SESSION['email'] = $user[4];
 		$_SESSION['userId'] = $user[0];
+		if ($user['admin_id'] !== null) {
+			$_SESSION['hierarchy'] = 'admin';
+		} else if ($user['agent_id'] !== null) {
+			$_SESSION['hierarchy'] = 'agent';
+		} else {
+			$_SESSION['hierarchy'] = 'client';
+		}
 
 		require_once('fetchDepartments.php');
 		
