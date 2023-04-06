@@ -9,7 +9,9 @@ INSERT INTO User VALUES
 
 -- Populate the agents table
 INSERT INTO Agent (id, user_id, department) VALUES
-  (1, 1, 'Accounting');
+  (1, 1, 'Accounting'),
+  (2, 4, 'Tax fraud'),
+  (3, 5, 'Tax fraud');
 
 INSERT INTO Department VALUES
   ('Accounting'),
