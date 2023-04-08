@@ -53,9 +53,6 @@ $tickets = fetchTickets($_SESSION['userId']);
             echo $html;
         }
     ?>
-    
-
-
-    <a href="logout.php">Logout</a>
+    <?php include('footer.php')?>
 </body>
 </html>
