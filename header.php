@@ -1,4 +1,6 @@
 <div class="header">
-    <p>popo</p>
-    <p>popo</p>
+    <p>this is header</p>
+    <form action="profilePage.php" method="post">
+	    <input type="submit" name="submit" value="profile page">
+    </form>
 </div>
