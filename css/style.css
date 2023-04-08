@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 #ticket {
     background-color: #000;
     padding: 1em;
@@ -7,4 +11,10 @@
 #ticketSocials{
     display: flex;
     gap: 2em;
+}
+
+.header {
+    display: flex;
+    justify-self: stretch;
+    background-color:#091212;
 }

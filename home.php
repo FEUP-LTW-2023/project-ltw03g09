@@ -18,9 +18,10 @@ $tickets = fetchTickets($_SESSION['userId']);
 <html>
 <head>
     <title>Homepage</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+    <?php include('header.php')?>
     <h1>Welcome, <?php echo $_SESSION['hierarchy']." ".$_SESSION['username']; ?>!</h1>
     <p>This is the homepage.</p>
 
