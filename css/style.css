@@ -1,9 +1,12 @@
 body {
     margin: 0;
+    background-color: #222;
 }
 
+h1, h2, h3, p{color: #fff}
+
 #ticket {
-    background-color: #000;
+    background-color: #091212;
     padding: 1em;
     margin: 1em;
 }
@@ -17,5 +20,14 @@ body {
     display: flex;
     background-color:#091212;
     padding-left: 1em;
-    padding-right: 1em;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+}
+
+a{
+    display: flex;
+    align-self: center;
 }
