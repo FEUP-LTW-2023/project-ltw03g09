@@ -30,29 +30,31 @@ $tickets = fetchTickets($_SESSION['userId']);
     </form>
 
     <h2>ticket list </h2>
-    <?php
-        foreach($tickets as $ticket){
-            $title = $ticket[1];
-            $text = $ticket[2];
-            $user_id = $ticket[3];
-            $department = $ticket[5];
-            $label = $ticket[7];
-            $username = $ticket[9];
-        
-            $html = <<<HTML
-                <div id='ticket'>
-                    <h3>$title</h3>
-                    <p>$text</p>
-                    <div id='ticketSocials'>
-                        <p>username: $username</p>    
-                        <p>department: $department</p>    
-                        <p>label: $label</p>   
+    <div class="ticketList">
+        <?php
+            foreach($tickets as $ticket){
+                $title = $ticket[1];
+                $text = $ticket[2];
+                $user_id = $ticket[3];
+                $department = $ticket[5];
+                $label = $ticket[7];
+                $username = $ticket[9];
+            
+                $html = <<<HTML
+                    <div id='ticket'>
+                        <h3>$title</h3>
+                        <p>$text</p>
+                        <div id='ticketSocials'>
+                            <p>username: $username</p>    
+                            <p>department: $department</p>    
+                            <p>label: $label</p>   
+                        </div>
                     </div>
-                </div>
-            HTML;
-            echo $html;
-        }
-    ?>
+                HTML;
+                echo $html;
+            }
+        ?>
+    </div>
     <?php include('footer.php')?>
 </body>
 </html>
