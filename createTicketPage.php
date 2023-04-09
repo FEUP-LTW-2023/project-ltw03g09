@@ -24,15 +24,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <form action="database/createTicket.php" method="post">  
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <p/>
-	    <input list="departments" name="department" class="profileTextbox" placeholder="department">
-	    <input type="text" name="label" class="profileTextbox" placeholder="label (ex: #feupRulzzz)">
-        <datalist id="departments">
+        <select id="departments" class="profileTextbox">
             <?php
                 foreach($_SESSION['departments'] as $department){
-                    echo '<option value="'.$department.'"/>';
+                    echo '<option value="'.$department.'"/>'.$department.'</option>';
                 }
             ?>
-        </datalist>
+        </select>
+	    <input type="text" name="label" class="profileTextbox" placeholder="label (ex: #feupRulzzz)">
         <p/>
         <textarea name="text" class="profileTextbox" rows="10" cols="50" placeholder="text"></textarea>
         <p/>

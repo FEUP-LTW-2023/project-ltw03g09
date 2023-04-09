@@ -20,6 +20,10 @@ a{
     overflow:scroll;
 }
 
+.invisibleTicket{
+    display: none;
+}
+
 .ticketList{
     overflow: scroll;
     margin: 1em;

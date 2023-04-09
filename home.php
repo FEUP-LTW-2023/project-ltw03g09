@@ -19,6 +19,7 @@ $tickets = fetchTickets($_SESSION['userId']);
 <head>
     <title>Homepage</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src ="scripts/filterTickets.js"></script>
 </head>
 <body>
     <?php include('header.php')?>
@@ -30,6 +31,9 @@ $tickets = fetchTickets($_SESSION['userId']);
     </form>
 
     <h2>ticket list </h2>
+	<input type="submit" name="submit" onclick="filterTickets('department', 'Tax fraud')" value="filter by tax fraud department">
+	<input type="submit" name="submit" onclick="filterTickets('label', '#666')" value="filter by #666 label">
+	<input type="submit" name="submit" onclick="unfilterTickets()" value="unfilter">
     <div class="ticketList">
         <?php
             foreach($tickets as $ticket){
@@ -45,9 +49,9 @@ $tickets = fetchTickets($_SESSION['userId']);
                         <h3>$title</h3>
                         <p>$text</p>
                         <div id='ticketSocials'>
-                            <p>username: $username</p>    
-                            <p>department: $department</p>    
-                            <p>label: $label</p>   
+                            <p>username: <p id='username'>$username</p></p>    
+                            <p>department: <p id='department'>$department</p></p>    
+                            <p>label: <p id='label'>$label</p></p>   
                         </div>
                     </div>
                 HTML;
