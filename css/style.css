@@ -21,8 +21,8 @@ a{
 }
 
 .ticketList{
-    max-height: 50vh;
     overflow: scroll;
+    margin: 1em;
 }
 
 #ticket {
