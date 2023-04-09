@@ -33,13 +33,16 @@ $tickets = fetchTickets($_SESSION['userId']);
     <h2>ticket list </h2>
     <div class="ticketFilter">
         <h3>filter: </h3>
-        <select id="filterQuery1" class="profileTextbox">
+        <select id="filterQuery1" class="profileTextbox"
+        onchange="createOptions(this.value)">
             <option value='' disabled selected>...</option>
             <option value='username'>username</option>
             <option value='department'>department</option>
             <option value='label'>label</option>
         </select>
-        <input type="text" placeholder="str" id='filterQuery2' class="profileTextbox"/>
+        <select id="filterQuery2" class="profileTextbox">
+        </select>
+        <!--<input type="text" placeholder="str" id='filterQuery2' class="profileTextbox"/>-->
 	    <input type="submit" name="submit" onclick="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)" value="filter">
 	    <input type="submit" name="submit" onclick="unfilterTickets()" value="unfilter">
         </select>
