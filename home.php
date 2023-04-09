@@ -31,9 +31,19 @@ $tickets = fetchTickets($_SESSION['userId']);
     </form>
 
     <h2>ticket list </h2>
-	<input type="submit" name="submit" onclick="filterTickets('department', 'Tax fraud')" value="filter by tax fraud department">
-	<input type="submit" name="submit" onclick="filterTickets('label', '#666')" value="filter by #666 label">
-	<input type="submit" name="submit" onclick="unfilterTickets()" value="unfilter">
+    <div class="ticketFilter">
+        <h3>filter: </h3>
+        <select id="filterQuery1" class="profileTextbox">
+            <option value='' disabled selected>...</option>
+            <option value='username'>username</option>
+            <option value='department'>department</option>
+            <option value='label'>label</option>
+        </select>
+        <input type="text" placeholder="str" id='filterQuery2' class="profileTextbox"/>
+	    <input type="submit" name="submit" onclick="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)" value="filter">
+	    <input type="submit" name="submit" onclick="unfilterTickets()" value="unfilter">
+        </select>
+    </div>
     <div class="ticketList">
         <?php
             foreach($tickets as $ticket){

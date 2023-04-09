@@ -25,6 +25,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <p/>
         <select id="departments" class="profileTextbox">
+            <option value='' disabled selected>department</option>
             <?php
                 foreach($_SESSION['departments'] as $department){
                     echo '<option value="'.$department.'"/>'.$department.'</option>';
