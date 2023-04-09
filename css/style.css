@@ -63,3 +63,13 @@ a{
     color: #fff;
     font-size: 20px;
 }
+
+.existingFilters{
+    margin-top: 1em;
+}
+
+.existingFilter{
+    border: 2px;
+    border-color: #fff;
+    border-style: dashed;
+}

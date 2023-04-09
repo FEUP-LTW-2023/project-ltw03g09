@@ -1,14 +1,53 @@
 //lamba = department || label || status || etc...
 const filterTickets = (lambda, str) => {
     
-    console.log("popo")
+
+    unfilterTickets(lambda); //overrides if exists other filter of the same lambda
+    //eliminate filter div
+    const filters = document.querySelectorAll('.existingFilter');
+    const toEliminate = [...filters].filter(f => f.getAttribute("lambda") === lambda)[0];
+    if(toEliminate) toEliminate.parentNode.removeChild(toEliminate)
+    
+
+    //filter tickets
     const impostors = [...document.querySelectorAll('#' + lambda)].filter(x => x.textContent != str).map(x => x.parentElement.parentElement)
     console.log(impostors)
-    impostors.map(x => x.classList.add('invisibleTicket'));
+    impostors.map(x => {
+        x.classList.add('invisibleTicket')
+        x.setAttribute('filteredBy', lambda)
+    });
+    
+
+
+
+    //create filter div
+    const div = document.createElement('div');
+    const p = document.createElement('p');
+    p.textContent = lambda + ": " + str;
+    div.appendChild(p);
+
+    div.classList.add('existingFilter');
+    att = 'this.parentNode.removeChild(this); unfilterTickets("' + lambda + '");'
+    div.setAttribute('onclick', att);
+    div.setAttribute('lambda', lambda)
+    div.setAttribute('str', str)
+    
+    document.querySelector('.existingFilters').appendChild(div)
+
 }
 
-const unfilterTickets = () => {
-    [...document.querySelectorAll(".invisibleTicket")].map(ticket => ticket.classList.remove('invisibleTicket'))
+const unfilterTickets = (lambda) => {
+    //return [...document.querySelectorAll(".invisibleTicket")].map(ticket => ticket.classList.remove('invisibleTicket'))
+    
+    console.log("unfilter")
+
+    const invisibleTickets = document.querySelectorAll('.invisibleTicket')
+    console.log(invisibleTickets)
+
+    const toUnfilter = [...invisibleTickets].filter(ticket => ticket.getAttribute('filteredBy') === lambda)
+    console.log(toUnfilter)
+    toUnfilter.forEach(ticket => ticket.classList.remove('invisibleTicket'))
+    
 }
 
 
