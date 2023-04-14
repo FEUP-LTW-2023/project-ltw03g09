@@ -5,13 +5,13 @@ DROP TABLE IF EXISTS Agent;
 DROP TABLE IF EXISTS Admin;
 DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS UserTickets;
+
 CREATE TABLE User (
     id		INTEGER PRIMARY KEY,
     username 	VARCHAR(50),
     name 	VARCHAR(50),
     password 	VARCHAR(50),
-    email 	VARCHAR(50),
-    permissions	VARCHAR(50)
+    email 	VARCHAR(50)
 );
 
 CREATE TABLE Ticket (
@@ -23,9 +23,10 @@ CREATE TABLE Ticket (
     department	VARCHAR(50),
     priority	VARCHAR(50),
     label	VARCHAR(50),
-    --assignedAgent
-    date	Date,
-    FOREIGN KEY (creator) REFERENCES User(id)
+    assignedAgent INTEGER,
+    date	VARCHAR(50),
+    FOREIGN KEY (creator) REFERENCES User(id),
+    FOREIGN KEY (assignedAgent) REFERENCES Agent(id)
 );
 
 

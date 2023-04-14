@@ -12,9 +12,11 @@ const filterTickets = (lambda, str) => {
     //filter tickets
     const impostors = [...document.querySelectorAll('#' + lambda)].filter(x => x.textContent != str).map(x => x.parentElement.parentElement)
     console.log(impostors)
-    impostors.map(x => {
-        x.classList.add('invisibleTicket')
-        x.setAttribute('filteredBy', lambda)
+    impostors.map(ticket => {
+        ticket.classList.add('invisibleTicket')
+        const filteredBy = ticket.getAttribute('filteredBy');
+        console.log(filteredBy)
+        ticket.setAttribute('filteredBy', (filteredBy ? filteredBy + '|' : '') +  lambda)
     });
     
 
@@ -44,9 +46,23 @@ const unfilterTickets = (lambda) => {
     const invisibleTickets = document.querySelectorAll('.invisibleTicket')
     console.log(invisibleTickets)
 
-    const toUnfilter = [...invisibleTickets].filter(ticket => ticket.getAttribute('filteredBy') === lambda)
+    const toUnfilter = [...invisibleTickets].filter(ticket => ticket.getAttribute('filteredBy').indexOf(lambda) != -1) //find substring
     console.log(toUnfilter)
-    toUnfilter.forEach(ticket => ticket.classList.remove('invisibleTicket'))
+    toUnfilter.forEach(ticket => {
+        const filteredBy = ticket.getAttribute('filteredBy');
+        if(lambda === filteredBy){
+            ticket.removeAttribute('filteredBy')
+            ticket.classList.remove('invisibleTicket')
+        }else{
+            const filters = filteredBy.split('|')
+            let newFilters = [];
+            filters.forEach(filter => {if(filter != lambda) newFilters.push(filter)})
+            console.log("new filters: ", newFilters)
+            console.log("FJDSKLAFJÇDSLAFJÇLSDA")
+            
+            ticket.setAttribute('filteredBy', newFilters.join('|'))
+        }
+    })
     
 }
 
@@ -67,13 +83,15 @@ const createOptions = (lambda) => {
     const filterQueryBox = document.querySelector('#filterQuery2');
     const options = getAllLambda(lambda);
     
-    const tags = options.map((option) => {
+    optionDummy = document.createElement('option')
+    optionDummy.setAttribute('value', '')
+    optionDummy.textContent = "..."
+    filterQueryBox.appendChild(optionDummy)
+
+    options.map((option) => {
         optionTag = document.createElement('option')
         optionTag.setAttribute('value', option)
         optionTag.textContent = option
         filterQueryBox.appendChild(optionTag)
-        return optionTag;
     });
-    console.log(tags)
-
 }

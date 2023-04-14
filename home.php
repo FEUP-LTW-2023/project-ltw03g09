@@ -39,8 +39,11 @@ $tickets = fetchTickets($_SESSION['userId']);
             <option value='department'>department</option>
             <option value='label'>label</option>
         </select>
-        <select id="filterQuery2" class="profileTextbox"></select>
-	    <input type="submit" name="submit" onclick="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)" value="filter">
+        <select id="filterQuery2" class="profileTextbox"
+        onchange="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)">
+            <option value='' disabled selected>...</option>
+        </select>
+	    <!--<input type="submit" name="submit" onclick="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)" value="filter">-->
         </select>
     </div>
     <div class="existingFilters"></div>
@@ -50,9 +53,13 @@ $tickets = fetchTickets($_SESSION['userId']);
                 $title = $ticket[1];
                 $text = $ticket[2];
                 $user_id = $ticket[3];
+                $status = $ticket[4];
                 $department = $ticket[5];
+                $priority = $ticket[6];
                 $label = $ticket[7];
-                $username = $ticket[9];
+                $assignedAgent = $ticket[8];
+                $date = $ticket[9];
+                $username = $ticket[10];
             
                 $html = <<<HTML
                     <div id='ticket'>
@@ -62,6 +69,10 @@ $tickets = fetchTickets($_SESSION['userId']);
                             <p>username: <p id='username'>$username</p></p>    
                             <p>department: <p id='department'>$department</p></p>    
                             <p>label: <p id='label'>$label</p></p>   
+                            <p>status: <p id='status'>$status</p></p>    
+                            <p>priority: <p id='priority'>$priority</p></p>    
+                            <p>date: <p id='date'>$date</p></p>    
+                            <!--<p>assignedAgent: <p id='asignedAgent'>$assignedAgent</p></p>-->
                         </div>
                     </div>
                 HTML;
