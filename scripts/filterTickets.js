@@ -55,11 +55,7 @@ const unfilterTickets = (lambda) => {
             ticket.classList.remove('invisibleTicket')
         }else{
             const filters = filteredBy.split('|')
-            let newFilters = [];
-            filters.forEach(filter => {if(filter != lambda) newFilters.push(filter)})
-            console.log("new filters: ", newFilters)
-            console.log("FJDSKLAFJÇDSLAFJÇLSDA")
-            
+            const newFilters = filters.filter(filter => filter != lambda)
             ticket.setAttribute('filteredBy', newFilters.join('|'))
         }
     })
