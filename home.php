@@ -44,7 +44,6 @@ $tickets = fetchTickets($_SESSION['userId']);
             <option value='' disabled selected>...</option>
         </select>
 	    <!--<input type="submit" name="submit" onclick="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)" value="filter">-->
-        </select>
     </div>
     <div class="existingFilters"></div>
     <div class="ticketList">

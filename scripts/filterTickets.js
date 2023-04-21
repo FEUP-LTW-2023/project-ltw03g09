@@ -90,4 +90,18 @@ const createOptions = (lambda) => {
         optionTag.textContent = option
         filterQueryBox.appendChild(optionTag)
     });
+    //filterQueryBox.setAttribute('onchange', 'filterTickets(' + document.getElementById('filterQuery1').value + ',' + filterQueryBox.value)
+}
+
+const createFilterQuery2 = (lambda) => {
+    const parentElement = document.querySelector('.ticketFilter');
+    const previousFilterQuery2 = document.querySelector('#filterQuery2');
+    //if(previousFilterQuery2) parentElement.remove(previousFilterQuery2)
+    
+    const filterQuery2 = document.createElement('select')
+    filterQuery2.classList.add('profileTextbox')
+    filterQuery2.setAttribute('id', 'filterQuery2')
+
+    parentElement.appendChild(filterQuery2)
+    createOptions(lambda)
 }
