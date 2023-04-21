@@ -24,7 +24,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <form action="database/createTicket.php" method="post">  
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <p/>
-        <select id="departments" class="profileTextbox">
+        <select id="departments" class="profileTextbox" name="department">
             <option value='' disabled selected>department</option>
             <?php
                 foreach($_SESSION['departments'] as $department){
