@@ -22,6 +22,6 @@
     $stmt = $db->prepare($query);
     $stmt->execute(array($title,$text,$userId,$department,$label));
     
-    header('Location: ../home.php');
+    header('Location: ../clientPage.php');
 
 ?>
