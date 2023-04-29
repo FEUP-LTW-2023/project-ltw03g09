@@ -13,9 +13,9 @@
   <body>
     <h1>login</h1>
     <form action="database/authenticate.php" method="post">
-	<input type="text" name="username" >
-	<input type="password" name="password" >
-	<input type="submit" name="submit" value="login">
+	    <input type="text" name="username" >
+	    <input type="password" name="password" >
+	    <input type="submit" name="submit" value="login">
     </form>
     <a href="registerPage.php">register</a>
   </body>
