@@ -30,6 +30,18 @@ $tickets = fetchTickets($_SESSION['userId']);
 	    <input type="submit" name="submit" value="create ticket">
     </form>
 
+    <div class="mainInterface">
+        <div class="interfaceButton" onclick="window.location.href = 'clientPage.php'">
+            <p class="interfaceButtonString">client stuff</p>
+        </div>
+        <div class="interfaceButton" onclick="window.location.href = 'agentPage.php'">
+            <p class="interfaceButtonString">agent stuff</p>
+        </div>
+        <div class="interfaceButton" onclick="window.location.href = 'adminPage.php'">
+            <p class="interfaceButtonString">admin stuff</p>
+        </div>
+    </div>
+
     <h2>ticket list </h2>
     <div class="ticketFilter">
         <h3>filter: </h3>
