@@ -74,3 +74,20 @@ a{
     border-color: #fff;
     border-style: dashed;
 }
+
+.mainInterface{
+    display: flex;
+    justify-content: space-around;
+}
+
+.interfaceButton{
+    border: 2px;
+    border-color: #fff;
+    border-style: solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.interfaceButtonString{
+    margin: 2em;
+}
