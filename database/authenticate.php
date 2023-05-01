@@ -22,8 +22,10 @@ function authenticate($username, $password){
 		$_SESSION['userId'] = $user[0];
 		if ($user['admin_id'] !== null) {
 			$_SESSION['hierarchy'] = 'admin';
+			$_SESSION['admin_id'] = $user['admin_id'];
 		} else if ($user['agent_id'] !== null) {
 			$_SESSION['hierarchy'] = 'agent';
+			$_SESSION['agent_id'] = $user['agent_id'];
 		} else {
 			$_SESSION['hierarchy'] = 'client';
 		}

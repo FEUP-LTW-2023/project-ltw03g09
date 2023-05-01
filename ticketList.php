@@ -1,5 +1,6 @@
 <?php
             foreach($tickets as $ticket){
+                $ticket_id = $ticket[0];
                 $title = $ticket[1];
                 $text = $ticket[2];
                 $user_id = $ticket[3];
@@ -12,14 +13,16 @@
                 $username = $ticket[10];
             
                 $html = <<<HTML
-                    <div id='ticket'>
-                        <h3>$title</h3>
+                    <div class ='ticket' id=$ticket_id>
+                        <div class='ticketHeader'>
+                            <h3>$title</h3>
+                            <p id='status' onclick="changeStatus(this)">$status</p>
+                        </div>
                         <p>$text</p>
                         <div id='ticketSocials'>
                             <p>username: <p id='username'>$username</p></p>    
                             <p>department: <p id='department'>$department</p></p>    
                             <p>label: <p id='label'>$label</p></p>   
-                            <p>status: <p id='status'>$status</p></p>    
                             <p>priority: <p id='priority'>$priority</p></p>    
                             <p>date: <p id='date'>$date</p></p>    
                             <!--<p>assignedAgent: <p id='asignedAgent'>$assignedAgent</p></p>-->
