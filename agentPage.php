@@ -17,9 +17,6 @@
 <body>
     <?php include('header.php')?>
     <h1>here you can see your departments' tickets</h1>
-    <form action="createTicketPage.php" method="post">
-	    <input type="submit" name="submit" value="create ticket">
-    </form>
     <h2>ticket list </h2>
     <div class="ticketFilter">
         <h3>filter: </h3>
