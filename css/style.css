@@ -30,7 +30,7 @@ a{
     height: 60vh;
 }
 
-#ticket {
+.ticket {
     background-color: #091212;
     padding: 1em;
     margin: 1em;
@@ -90,4 +90,13 @@ a{
 
 .interfaceButtonString{
     margin: 2em;
+}
+
+.ticketHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+#status{
+    cursor: pointer;
 }
