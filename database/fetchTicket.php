@@ -6,10 +6,7 @@
         // $db = getDatabaseConnection();
 
 
-        $query = 'SELECT * FROM ticket WHERE ticketId = ?';
-
-
-
+        $query = 'SELECT ticket.*, user.username FROM ticket, user WHERE ticketId = ? and ticket.creator = user.id';
 
         $stmt = $db->prepare($query);
         $stmt->execute(array($ticketId));

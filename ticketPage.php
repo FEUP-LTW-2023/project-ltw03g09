@@ -1,4 +1,5 @@
 <?php
+        session_start();
         require_once('database/fetchTicket.php');
         require_once('database/connection.php');
         $db = getDatabaseConnection('database/');
@@ -45,13 +46,18 @@
         </div>
     </div>
     <div class="comments">
+        <?php 
+        
+        ?>
         <p>comment: this is decoy text</p>
         <p>comment: this is decoy text</p>        
         <p>comment: this is decoy text</p>        
         <p>comment: this is decoy text</p>        
     </div>
-    <form class="inputComment" method="post">
+    <form class="inputComment" action="database/sendComment.php" method="post" >
         <input type="text" name="text" class="inputBoxComment" placeholder="comment here...">
+        <input type="hidden" name= "ticketId" value="<?php echo $ticket_id ?>">
+        <input type="hidden" name= "userId" value="<?php echo $_SESSION['userId']?>">
 	    <input type="submit" name="submit" value="send">
     </form>
     
