@@ -18,6 +18,9 @@
         $date = $ticket[9];
         $username = $ticket[10];
 
+        require_once('database/fetchComments.php');
+        $comments = fetchComments($ticket_id);
+        
 ?>
 
 <!DOCTYPE html>
@@ -45,21 +48,18 @@
             <p>date: <?php echo $date ?></p>   
         </div>
     </div>
-    <div class="comments">
-        <?php 
-        
-        ?>
-        <p>comment: this is decoy text</p>
-        <p>comment: this is decoy text</p>        
-        <p>comment: this is decoy text</p>        
-        <p>comment: this is decoy text</p>        
+    <h3>comments</h3>
+    <div class="commentSection">
+        <div class="comments">
+            <?php include('commentList.php'); ?>
+        </div>
+        <form class="inputComment" action="database/sendComment.php" method="post" >
+            <input type="text" name="text" class="inputBoxComment" placeholder="comment here...">
+            <input type="hidden" name= "ticketId" value="<?php echo $ticket_id ?>">
+            <input type="hidden" name= "userId" value="<?php echo $_SESSION['userId']?>">
+            <input type="submit" name="submit" value="send">
+        </form>
     </div>
-    <form class="inputComment" action="database/sendComment.php" method="post" >
-        <input type="text" name="text" class="inputBoxComment" placeholder="comment here...">
-        <input type="hidden" name= "ticketId" value="<?php echo $ticket_id ?>">
-        <input type="hidden" name= "userId" value="<?php echo $_SESSION['userId']?>">
-	    <input type="submit" name="submit" value="send">
-    </form>
     
     <?php include('footer.php')?>
 </body>
