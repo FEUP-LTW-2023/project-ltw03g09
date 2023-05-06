@@ -1,7 +1,7 @@
 <?php
 
-function getDatabaseConnection(){
-    $db = new PDO('sqlite:data.db');
+function getDatabaseConnection($pre = ""){
+    $db = new PDO('sqlite:' . $pre . 'data.db');
     return $db;
 }
 
