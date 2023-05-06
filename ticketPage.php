@@ -45,8 +45,15 @@
         </div>
     </div>
     <div class="comments">
-        
+        <p>comment: this is decoy text</p>
+        <p>comment: this is decoy text</p>        
+        <p>comment: this is decoy text</p>        
+        <p>comment: this is decoy text</p>        
     </div>
+    <form class="inputComment" method="post">
+        <input type="text" name="text" class="inputBoxComment" placeholder="comment here...">
+	    <input type="submit" name="submit" value="send">
+    </form>
     
     <?php include('footer.php')?>
 </body>

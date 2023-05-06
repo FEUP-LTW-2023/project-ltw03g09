@@ -109,3 +109,15 @@ a{
     display: flex;
     margin: 1em;
 }
+
+.inputComment {
+    display: flex;
+    background-color: #091212;
+}
+
+.inputBoxComment {
+    background-color: #091212;
+    color: #fff;
+    placeholder-color: #fff;
+    padding: 1em;
+}

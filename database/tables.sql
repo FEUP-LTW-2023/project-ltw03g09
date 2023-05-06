@@ -54,4 +54,10 @@ CREATE TABLE UserTickets (
     ticketId	REFERENCES Ticket
 );
 
-
+CREATE TABLE Comment (
+    id INTEGER PRIMARY KEY,
+    text VARCHAR(100),
+    ticket_id REFERENCES Ticket,
+    user_id REFERENCES User,
+    date Date
+)
