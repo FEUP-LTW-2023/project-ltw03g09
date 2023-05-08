@@ -20,14 +20,16 @@ function authenticate($username, $password){
 		$_SESSION['name'] = $user[2];
 		$_SESSION['email'] = $user[4];
 		$_SESSION['userId'] = $user[0];
+
+		$_SESSION['hierarchy'] = 'client';
+
+		if ($user['agent_id'] !== null) {
+			$_SESSION['hierarchy'] = 'agent';
+			$_SESSION['agent_id'] = $user['agent_id'];
+		}
 		if ($user['admin_id'] !== null) {
 			$_SESSION['hierarchy'] = 'admin';
 			$_SESSION['admin_id'] = $user['admin_id'];
-		} else if ($user['agent_id'] !== null) {
-			$_SESSION['hierarchy'] = 'agent';
-			$_SESSION['agent_id'] = $user['agent_id'];
-		} else {
-			$_SESSION['hierarchy'] = 'client';
 		}
 
 		require_once('fetchDepartments.php');
