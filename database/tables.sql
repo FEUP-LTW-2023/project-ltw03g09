@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Agent;
 DROP TABLE IF EXISTS Admin;
 DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS UserTickets;
+DROP TABLE IF EXISTS Comment;
 
 CREATE TABLE User (
     id		INTEGER PRIMARY KEY,
@@ -54,4 +55,10 @@ CREATE TABLE UserTickets (
     ticketId	REFERENCES Ticket
 );
 
-
+CREATE TABLE Comment (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    text VARCHAR(100),
+    ticket_id REFERENCES Ticket,
+    user_id REFERENCES User,
+    date Date
+)

@@ -13,6 +13,9 @@ INSERT INTO Agent (id, user_id, department) VALUES
   (2, 4, 'Tax fraud'),
   (3, 5, 'Tax fraud');
 
+INSERT INTO Admin (id, agent_id) VALUES
+  (1, 3);
+
 INSERT INTO Department VALUES
   ('Accounting'),
   ('Investigation'),

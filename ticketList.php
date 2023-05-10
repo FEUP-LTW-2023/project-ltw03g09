@@ -1,3 +1,4 @@
+<script src ="scripts/goToTicketPage.js"></script>
 <?php
             foreach($tickets as $ticket){
                 $ticket_id = $ticket[0];
@@ -13,7 +14,7 @@
                 $username = $ticket[10];
             
                 $html = <<<HTML
-                    <div class ='ticket' id=$ticket_id>
+                    <div class ='ticket' id=$ticket_id onclick=goToTicketPage($ticket_id)>
                         <div class='ticketHeader'>
                             <h3>$title</h3>
                             <p id='status' onclick="changeStatus(this)">$status</p>

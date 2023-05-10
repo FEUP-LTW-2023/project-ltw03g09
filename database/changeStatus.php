@@ -8,9 +8,15 @@
 
     $db = getDatabaseConnection();
 
-    $query = 'UPDATE Ticket SET status = ? WHERE ticketId = ?';
+    error_log("FDSAKFÇLDJSAFDSA");
+    error_log($ticketId);
+    error_log($status);
+
+    $query = 'UPDATE Ticket SET status = ?, assignedAgent = NULL WHERE ticketId = ?';
 
     $stmt = $db->prepare($query);
     $stmt->execute(array($status, $ticketId));
+
+	//header('Location: ../ticketPage.php?ticketId='.$ticketId);
 
 ?>

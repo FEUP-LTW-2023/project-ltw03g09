@@ -100,3 +100,54 @@ a{
 #status{
     cursor: pointer;
 }
+
+.ticketHeader {
+    display: flex;
+    margin: 1em;
+}
+.ticketBody {
+    display: flex;
+    margin: 1em;
+}
+
+.inputComment {
+    display: flex;
+    background-color: #091212;
+}
+
+.inputBoxComment {
+    background-color: #091212;
+    color: #fff;
+    padding: 1em;
+}
+
+.commentSection{
+    margin: 1em;
+}
+
+.comments {
+    overflow: scroll;
+    max-height: 60vh;
+}
+
+.comment {
+    background-color: #091212;
+    color: #fff;
+    padding: 1em;
+    border-bottom: 1px;
+    border-bottom-color: #fff;
+    border-bottom-style: solid;
+}
+
+.commentUsername {
+    color: #999;
+    margin-bottom: 3px;
+}
+
+.commentText {
+    margin: 1em;
+}
+
+.commentDate {
+    font-size: 10px;
+}
