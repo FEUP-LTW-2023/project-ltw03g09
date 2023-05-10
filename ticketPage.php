@@ -6,6 +6,7 @@
         $ticketId = $_GET['ticketId'];
         $ticket = fetchTicket($db, $ticketId);
 
+
         $ticket_id = $ticket[0];
         $title = $ticket[1];
         $text = $ticket[2];
@@ -18,13 +19,22 @@
         $date = $ticket[9];
         $username = $ticket[10];
 
+        require_once('database/fetchDepartmentAgents.php');
+        $agents = fetchDepartmentAgents($department);
+
         require_once('database/fetchComments.php');
         $comments = fetchComments($ticket_id);
+
+
         
 ?>
 
 <!DOCTYPE html>
 <html>
+<script src ="scripts/changeStatus.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src ="scripts/assignAgent.js"></script>
+
 <head>
     <title>Homepage</title>
     <link href="css/style.css" rel="stylesheet">
@@ -35,17 +45,43 @@
     <div class="ticket">
         <div class="ticketHeader">
             <h1><?php echo $title ?></h1>
-            <p><?php echo $status ?></p>
+            <p id='status' onclick="changeStatus(<?php echo $ticket_id ?>, this)"><?php echo $status ?></p>
         </div>
         <div class="ticketBody">
             <p><?php echo $text ?></p>
         </div>
         <div id="ticketSocials">
             <p>username: <?php echo $username ?></p>    
-            <p>department: <?php echo $department ?></p>    
+            <p>department: <div id='department'><?php echo $department ?></div></p>    
             <p>label: <?php echo $label ?></p>   
             <p>priority: <?php echo $priority ?></p>    
             <p>date: <?php echo $date ?></p>   
+        </div>
+        <div class="assignAgent">
+            <?php
+                    
+                require_once('database/fetchDepartmentAgents.php');
+                $agents = fetchDepartmentAgents($department);
+
+                echo '<script>const agents = ' . json_encode($agents) . ';</script>';
+
+                if($status == 'open'){
+
+                    echo "<p>assign agent:</p>";
+
+                    echo "<form action='database/assignAgent.php' method='post'>";
+                    echo "<select id='agent' class='profileTextbox' name='agent'>";
+                    echo "<option value='' disabled selected>--</option>";
+
+                    foreach($agents as $agent){
+                        echo '<option id="'.$agent[0].'" value="'.$agent[1].'"/>'.$agent[1].'</option>';
+                    }
+                    echo "</select>";
+                    echo "<input type='hidden' value='".$ticket_id."' name='ticket_id'>";
+                    echo "<input onclick='assignAgent()' type='submit' value='assign' name='submit'>";
+                    echo "</form>";
+                }
+            ?>
         </div>
     </div>
     <h3>comments</h3>
@@ -53,10 +89,10 @@
         <div class="comments">
             <?php include('commentList.php'); ?>
         </div>
-        <form class="inputComment" action="database/sendComment.php" method="post" >
-            <input type="text" name="text" class="inputBoxComment" placeholder="comment here...">
-            <input type="hidden" name= "ticketId" value="<?php echo $ticket_id ?>">
-            <input type="hidden" name= "userId" value="<?php echo $_SESSION['userId']?>">
+        <form class="inputComment" action="database/sendComment.php" method="post">
+            <input type="text" name="text" class="inputBoxComment" placeholder="comment here..."/>
+            <input type="hidden" name= "ticketId" value="<?php echo $ticket_id ?>"/>
+            <input type="hidden" name= "userId" value="<?php echo $_SESSION['userId']?>"/>
             <input type="submit" name="submit" value="send">
         </form>
     </div>
