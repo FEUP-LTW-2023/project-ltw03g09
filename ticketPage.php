@@ -33,7 +33,9 @@
 <html>
 <script src ="scripts/changeStatus.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script src ="scripts/assignAgent.js"></script>
+
 
 <head>
     <title>Homepage</title>
@@ -59,29 +61,16 @@
         </div>
         <div class="assignAgent">
             <?php
-                    
                 require_once('database/fetchDepartmentAgents.php');
                 $agents = fetchDepartmentAgents($department);
 
                 echo '<script>const agents = ' . json_encode($agents) . ';</script>';
-
-                if($status == 'open'){
-
-                    echo "<p>assign agent:</p>";
-
-                    echo "<form action='database/assignAgent.php' method='post'>";
-                    echo "<select id='agent' class='profileTextbox' name='agent'>";
-                    echo "<option value='' disabled selected>--</option>";
-
-                    foreach($agents as $agent){
-                        echo '<option id="'.$agent[0].'" value="'.$agent[1].'"/>'.$agent[1].'</option>';
-                    }
-                    echo "</select>";
-                    echo "<input type='hidden' value='".$ticket_id."' name='ticket_id'>";
-                    echo "<input onclick='assignAgent()' type='submit' value='assign' name='submit'>";
-                    echo "</form>";
-                }
             ?>
+            <script>
+                const status = document.querySelector("#status").textContent;
+                if(status === "open") assignAgentUI(<?php echo $ticketId ?>);    
+                else document.querySelector('.assignAgent').innerHTML = "";
+            </script>
         </div>
     </div>
     <h3>comments</h3>
