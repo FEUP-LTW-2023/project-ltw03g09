@@ -20,6 +20,7 @@ function authenticate($username, $password){
 		$_SESSION['name'] = $user[2];
 		$_SESSION['email'] = $user[4];
 		$_SESSION['userId'] = $user[0];
+		$_SESSION['image'] = $user[5];
 
 		$_SESSION['hierarchy'] = 'client';
 

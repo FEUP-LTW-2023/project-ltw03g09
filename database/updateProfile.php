@@ -11,21 +11,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 $username = $_POST['username'];
 $name = $_POST['name'];
 $email = $_POST['email'];
+$image = $_POST['image'];
 
-echo $_SESSION['username'];
 
 
 require_once('connection.php');
 
 $db = getDatabaseConnection();
 
-$stmt = $db->prepare("UPDATE User SET username=?, name=?, email=? where username=?");
-$stmt->execute(array($username, $name, $email, $_SESSION['username']));
+$stmt = $db->prepare("UPDATE User SET username=?, name=?, email=?, image=? where username=?");
+$stmt->execute(array($username, $name, $email, $image, $_SESSION['username'] ));
 $user = $stmt->fetch();
 
 $_SESSION['username'] = $username;
 $_SESSION['name'] = $name;
 $_SESSION['email'] = $email;
+$_SESSION['image'] = $image;
 
 
 header('Location: ../profilePage.php')

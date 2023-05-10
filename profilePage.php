@@ -24,6 +24,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 	    <p>username: <input type="text" name="username" class="profileTextbox" value=<?php echo $_SESSION['username']; ?>></p>
 	    <p>name: <input type="text" name="name" class="profileTextbox" value=<?php echo $_SESSION['name']; ?>></p>
 	    <p>email: <input type="text" name="email" class="profileTextbox" value=<?php echo $_SESSION['email']; ?>></p>
+	    <p>image url: <input type="text" name="image" class="profileTextbox" value=<?php echo $_SESSION['image']; ?>></p>
+
 	    <input type="submit" name="submit" value="update profile">
     </form>
     <p/>

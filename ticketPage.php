@@ -33,9 +33,7 @@
 <html>
 <script src ="scripts/changeStatus.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src ="scripts/assignAgent.js"></script>
-
 
 <head>
     <title>Homepage</title>

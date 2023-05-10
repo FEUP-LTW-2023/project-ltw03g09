@@ -1,10 +1,10 @@
 -- Populate the users table
 INSERT INTO User VALUES
-  (1, 'jontho', 'John Doe', '1234', 'johndoe@example.com'),
-  (2, 'janetho', 'Jane Doe',  '1234', 'janedoe@example.com'),
-  (3, 'bobby69', 'Bob Smith', '1234', 'bobsmith@example.com'),
-  (4, 'test', 'test', 'test', 'test'),
-  (5, 'username', 'name', 'password', 'email');
+  (1, 'jontho', 'John Doe', '1234', 'johndoe@example.com', 'https://e7.pngegg.com/pngimages/922/865/png-clipart-discord-pepe-the-frog-video-games-pepe.png'),
+  (2, 'janetho', 'Jane Doe',  '1234', 'janedoe@example.com', 'https://e7.pngegg.com/pngimages/922/865/png-clipart-discord-pepe-the-frog-video-games-pepe.png'),
+  (3, 'bobby69', 'Bob Smith', '1234', 'bobsmith@example.com', 'https://e7.pngegg.com/pngimages/922/865/png-clipart-discord-pepe-the-frog-video-games-pepe.png'),
+  (4, 'test', 'test', 'test', 'test','https://e7.pngegg.com/pngimages/922/865/png-clipart-discord-pepe-the-frog-video-games-pepe.png'),
+  (5, 'username', 'name', 'password', 'email','https://e7.pngegg.com/pngimages/922/865/png-clipart-discord-pepe-the-frog-video-games-pepe.png');
     
 
 -- Populate the agents table
