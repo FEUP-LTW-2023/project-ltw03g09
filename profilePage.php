@@ -28,12 +28,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 	    <input type="submit" name="submit" value="update profile">
     </form>
-    <p/>
-    <p/>
-    <form action="home.php" method="post">
-	<input type="submit" name="submit" value="home">
-    </form>
-    <p/>
     <?php include('footer.php')?>
 </body>
 </html>

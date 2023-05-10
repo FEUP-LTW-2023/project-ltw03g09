@@ -38,10 +38,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <p/>
 	    <input type="submit" name="submit" value="submit">
     </form>
-
-    <form action="home.php" method="post">
-	    <input type="submit" name="submit" value="home">
-    </form>
     <?php include('footer.php')?>
 </body>
 </html
