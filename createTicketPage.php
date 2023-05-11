@@ -40,8 +40,14 @@ $departments = fetchDepartments();
         <p/>
         <textarea name="text" class="profileTextbox" rows="10" cols="50" placeholder="text"></textarea>
         <p/>
+        <input type="hidden" id="currentdate" name="date" readonly>
 	    <input type="submit" name="submit" value="submit">
     </form>
+    <script>
+    var currentDate = new Date();
+    var dateString = currentDate.toISOString();
+    document.getElementById("currentdate").value = dateString;
+  </script>
     <?php include('footer.php')?>
 </body>
 </html
