@@ -34,6 +34,7 @@ a{
     background-color: #091212;
     padding: 1em;
     margin: 1em;
+    cursor: pointer;
 }
 
 #ticketSocials{
