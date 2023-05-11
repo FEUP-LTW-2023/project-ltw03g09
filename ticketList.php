@@ -14,7 +14,7 @@
                 $username = $ticket[10];
             
                 $html = <<<HTML
-                    <div class ='ticket' id=$ticket_id onclick=goToTicketPage($ticket_id)>
+                    <div class ='ticketBanner' id=$ticket_id onclick=goToTicketPage($ticket_id)>
                         <div class='ticketHeader'>
                             <h3>$title</h3>
                             <p id='status'>$status</p>

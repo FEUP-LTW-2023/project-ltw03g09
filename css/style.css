@@ -25,16 +25,27 @@ a{
 }
 
 .ticketList{
-    overflow: scroll;
+    /*overflow: scroll;*/
     margin: 1em;
-    height: 60vh;
+    /*height: 60vh;*/
 }
 
 .ticket {
     background-color: #091212;
     padding: 1em;
     margin: 1em;
+}
+
+.ticketBanner {
+    background-color: #091212;
+    padding: 1em;
+    margin: 1em;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.ticketBanner:hover{
+    border: 2px solid #fff;
 }
 
 #ticketSocials{
