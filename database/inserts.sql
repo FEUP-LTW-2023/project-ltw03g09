@@ -8,10 +8,10 @@ INSERT INTO User VALUES
     
 
 -- Populate the agents table
-INSERT INTO Agent (id, user_id, department) VALUES
-  (1, 1, 'Accounting'),
-  (2, 4, 'Tax fraud'),
-  (3, 5, 'Tax fraud');
+INSERT INTO Agent (id, user_id) VALUES
+  (1, 1),
+  (2, 4),
+  (3, 5);
 
 INSERT INTO Admin (id, agent_id) VALUES
   (1, 3);
@@ -22,6 +22,11 @@ INSERT INTO Department VALUES
   ('Production'),
   ('Tax fraud'),
   ('HR');
+  
+INSERT INTO AgentDepartment (agent_id, department) VALUES
+  (3,'Tax fraud'),
+  (3,'Accounting'),
+  (2, 'HR');
   
 INSERT INTO Ticket VALUES
   (1, 'title1', 'lorem ipsum', 5, 'open', 'Tax fraud', 'urgent', '#hashtag', 1, 'date'),

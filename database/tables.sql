@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS Admin;
 DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS UserTickets;
 DROP TABLE IF EXISTS Comment;
+DROP TABLE IF EXISTS AgentDepartment;
 
 CREATE TABLE User (
     id		INTEGER PRIMARY KEY,
@@ -39,9 +40,7 @@ CREATE TABLE Department (
 CREATE TABLE Agent (
   id INTEGER PRIMARY KEY,
   user_id INTEGER,
-  department VARCHAR(20),
-  FOREIGN KEY (user_id) REFERENCES User(id),
-  FOREIGN KEY (department) REFERENCES Department(name)
+  FOREIGN KEY (user_id) REFERENCES User(id)
 );
 
 CREATE TABLE Admin (
@@ -52,8 +51,13 @@ CREATE TABLE Admin (
 
 
 CREATE TABLE UserTickets (
-    username	REFERENCES User,
-    ticketId	REFERENCES Ticket
+  username	REFERENCES User,
+  ticketId	REFERENCES Ticket
+);
+
+CREATE TABLE AgentDepartment (
+  agent_id REFERENCES Agent,
+  department REFERENCES Department
 );
 
 CREATE TABLE Comment (

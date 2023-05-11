@@ -19,9 +19,6 @@
         $date = $ticket[9];
         $username = $ticket[10];
 
-        require_once('database/fetchDepartmentAgents.php');
-        $agents = fetchDepartmentAgents($department);
-
         require_once('database/fetchComments.php');
         $comments = fetchComments($ticket_id);
 
@@ -45,7 +42,13 @@
     <div class="ticket">
         <div class="ticketHeader">
             <h1><?php echo $title ?></h1>
-            <p id='status' onclick="changeStatus(<?php echo $ticket_id ?>, this)"><?php echo $status ?></p>
+            <p id='status'
+                <?php
+                    if(in_array($department, $_SESSION['departments'])){
+                        echo 'onclick="changeStatus('.$ticket_id.', this)"';
+                    }
+                ?>><?php echo $status;?></p>
+
         </div>
         <div class="ticketBody">
             <p><?php echo $text ?></p>
@@ -59,16 +62,27 @@
         </div>
         <div class="assignAgent">
             <?php
+
+                
                 require_once('database/fetchDepartmentAgents.php');
                 $agents = fetchDepartmentAgents($department);
 
                 echo '<script>const agents = ' . json_encode($agents) . ';</script>';
+
+                if(in_array($department, $_SESSION['departments'])){
+                    $html = <<<HTML
+                    <script>
+                        const status = document.querySelector("#status").textContent;
+                        console.log("ASSIGNN UI AGENT")
+                        console.log("status", status)
+                        console.log(status)
+                        if(status === "open") assignAgentUI($ticketId);    
+                        else document.querySelector('.assignAgent').innerHTML = "";
+                    </script>
+                    HTML;
+                    echo $html;
+                }  
             ?>
-            <script>
-                const status = document.querySelector("#status").textContent;
-                if(status === "open") assignAgentUI(<?php echo $ticketId ?>);    
-                else document.querySelector('.assignAgent').innerHTML = "";
-            </script>
         </div>
     </div>
     <h3>comments</h3>

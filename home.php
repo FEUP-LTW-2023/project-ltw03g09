@@ -22,22 +22,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <p>This is the homepage.</p>
 
     <div class="mainInterface">
-        <div class="interfaceButton" onclick="window.location.href = 'clientPage.php'">
-            <p class="interfaceButtonString">client stuff</p>
+        
+        <div class="interfaceButton" onclick="window.location.href = 'ticketListPage.php'">
+            <p class="interfaceButtonString">ticket list</p>
+        </div>
+        <div class="interfaceButton" onclick="window.location.href = 'createTicketPage.php'">
+            <p class="interfaceButtonString">create ticket</p>
         </div>
 
-        <?php
-            error_log('agent id: ');
-            error_log($_SESSION['agent_id']);
-            if($_SESSION['agent_id']){
-                $html = <<<HTML
-                    <div class="interfaceButton" onclick="window.location.href = 'agentPage.php'">
-                        <p class="interfaceButtonString">agent stuff</p>
-                    </div>
-                HTML;
-                echo $html;
-            }
-        ?>
         <?php
             if($_SESSION['admin_id']){
                 $html = <<<HTML
@@ -48,6 +40,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 echo $html;
             }
         ?>
+        
     </div>
 
     

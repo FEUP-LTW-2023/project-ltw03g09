@@ -6,7 +6,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     // user isn't logged in, redirect to login page
     header('Location: index.php');
     exit;
+
 }
+
+require_once('database/fetchDepartments.php');
+$departments = fetchDepartments();
 
 ?>
 
@@ -27,7 +31,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <select id="departments" class="profileTextbox" name="department">
             <option value='' disabled selected>department</option>
             <?php
-                foreach($_SESSION['departments'] as $department){
+                foreach($departments as $department){
                     echo '<option value="'.$department.'"/>'.$department.'</option>';
                 }
             ?>
