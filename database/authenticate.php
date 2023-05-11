@@ -14,32 +14,40 @@ function authenticate($username, $password){
     $stmt->execute(array($username, $password));
     $user = $stmt->fetch();
 
+	$db = null;
+
     if($user){
 		$_SESSION['username'] = $username;
 		$_SESSION['loggedin'] = true;
-		$_SESSION['name'] = $user[2];
-		$_SESSION['email'] = $user[4];
-		$_SESSION['userId'] = $user[0];
-		$_SESSION['image'] = $user[5];
+		$_SESSION['name'] = $user['name'];
+		$_SESSION['email'] = $user['email'];
+		$_SESSION['userId'] = $user['id'];
+		$_SESSION['image'] = $user['image'];
 
 		$_SESSION['hierarchy'] = 'client';
 
 		if ($user['agent_id'] !== null) {
+
 			$_SESSION['hierarchy'] = 'agent';
 			$_SESSION['agent_id'] = $user['agent_id'];
+
+    		$db = getDatabaseConnection();
+			$stmt2 = $db->prepare("SELECT department from agentDepartment where agent_id = 3");
+			$stmt2->execute();
+			$departments = $stmt2->fetchAll();
+			
+
+			foreach($departments as $department){
+				$_SESSION['departments'][] = $department[0];
+			}
 		}
+
 		if ($user['admin_id'] !== null) {
 			$_SESSION['hierarchy'] = 'admin';
 			$_SESSION['admin_id'] = $user['admin_id'];
 		}
 
-		require_once('fetchDepartments.php');
 		
-		//this probably shouldnt be here
-		$departments = fetchDepartments();
-		//this should be a global variable. not a session variable
-		$_SESSION['departments'] = $departments; 
-
 		echo "logged in";
 		header('Location: ../home.php');
 		exit;

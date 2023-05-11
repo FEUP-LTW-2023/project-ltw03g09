@@ -17,7 +17,7 @@
 
     $db = getDatabaseConnection();
 
-    $query = 'INSERT INTO Ticket (title, text, creator, department, label) VALUES (?, ?, ?, ?, ?)';
+    $query = 'INSERT INTO Ticket (title, text, creator, department, label, status) VALUES (?, ?, ?, ?, ?, "open")';
 
     $stmt = $db->prepare($query);
     $stmt->execute(array($title,$text,$userId,$department,$label));

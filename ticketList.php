@@ -17,7 +17,7 @@
                     <div class ='ticket' id=$ticket_id onclick=goToTicketPage($ticket_id)>
                         <div class='ticketHeader'>
                             <h3>$title</h3>
-                            <p id='status' onclick="changeStatus(this)">$status</p>
+                            <p id='status'>$status</p>
                         </div>
                         <p>$text</p>
                         <div id='ticketSocials'>
