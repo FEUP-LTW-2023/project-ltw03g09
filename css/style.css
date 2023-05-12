@@ -25,9 +25,9 @@ a{
 }
 
 .ticketList{
-    /*overflow: scroll;*/
     margin: 1em;
-    /*max-height: 60vh;*/
+    /*overflow: scroll;
+    max-height: 70vh;*/
 }
 
 .ticket {
@@ -47,11 +47,16 @@ a{
 
 .ticketBanner:hover{
     border: 2px solid #fff;
+    transform: scaleY(1.1);
+    transition-duration: 0.5s;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 #ticketSocials{
     display: flex;
     gap: 2em;
+    justify-content: space-between;
 }
 
 .header {
@@ -169,14 +174,14 @@ a{
     color:#fff;
     display:flex !important;
     align-items: center;
-    padding-left: 1em;
     font-size:20px;
+    margin-left: 0.5em;
     cursor:pointer
 }
 
 .fas:hover {
-    font-size: 150%;
-    padding-left: 0.75em;
+    transform: scale(1.2);
+    transition-duration: 0.5s;
 }
 
 .profileIcon {
@@ -188,9 +193,6 @@ a{
 }
 
 .profileIcon:hover{
-    width: 56px;
-    height: 56px;
-    margin: 4px;    
-    margin-right: 12px;
-    
+   transform:scale(1.2); 
+   transition-duration: 0.5s;
 }
