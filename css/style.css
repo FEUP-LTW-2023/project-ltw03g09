@@ -25,27 +25,45 @@ a{
 }
 
 .ticketList{
-    overflow: scroll;
     margin: 1em;
-    height: 60vh;
+    /*overflow: scroll;
+    max-height: 70vh;*/
 }
 
 .ticket {
     background-color: #091212;
     padding: 1em;
     margin: 1em;
+}
+
+.ticketBanner {
+    background-color: #091212;
+    padding: 1em;
+    margin: 1em;
     cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #091212;
+}
+
+.ticketBanner:hover{
+    border: 2px solid #fff;
+    transform: scaleY(1.1);
+    transition-duration: 0.5s;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 #ticketSocials{
     display: flex;
     gap: 2em;
+    justify-content: space-between;
 }
 
 .header {
     display: flex;
     background-color:#091212;
     justify-content: space-between;
+    max-height: 5em;
 }
 
 #footer{
@@ -150,4 +168,31 @@ a{
 
 .commentDate {
     font-size: 10px;
+}
+
+.fas {
+    color:#fff;
+    display:flex !important;
+    align-items: center;
+    font-size:20px;
+    margin-left: 0.5em;
+    cursor:pointer
+}
+
+.fas:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
+
+.profileIcon {
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    margin:8px;
+    margin-right:16px;
+}
+
+.profileIcon:hover{
+   transform:scale(1.2); 
+   transition-duration: 0.5s;
 }

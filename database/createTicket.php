@@ -10,6 +10,7 @@
     $text =         $_POST['text'];
     $department =   $_POST['department'];
     $label =        $_POST['label'];
+    $date =         $_POST['date'];
 
     $userId = $_SESSION['userId'];
 
@@ -17,11 +18,11 @@
 
     $db = getDatabaseConnection();
 
-    $query = 'INSERT INTO Ticket (title, text, creator, department, label, status) VALUES (?, ?, ?, ?, ?, "open")';
+    $query = 'INSERT INTO Ticket (title, text, creator, department, label, status, date) VALUES (?, ?, ?, ?, ?, "open", ?)';
 
     $stmt = $db->prepare($query);
-    $stmt->execute(array($title,$text,$userId,$department,$label));
+    $stmt->execute(array($title,$text,$userId,$department,$label, $date));
     
-    header('Location: ../clientPage.php');
+    header('Location: ../TicketListPage.php');
 
 ?>
