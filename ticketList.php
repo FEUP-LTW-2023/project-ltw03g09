@@ -1,4 +1,4 @@
-<script src ="scripts/goToTicketPage.js"></script>
+<script src="scripts/goToTicketPage.js"></script>
 <?php
             foreach($tickets as $ticket){
                 $ticket_id = $ticket['ticketId'];
