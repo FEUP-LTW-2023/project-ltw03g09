@@ -1,3 +1,5 @@
+.mode columns
+.headers on
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Ticket;
 DROP TABLE IF EXISTS Client;
@@ -14,7 +16,7 @@ CREATE TABLE User (
     name 	VARCHAR(50),
     password 	VARCHAR(50),
     email 	VARCHAR(50),
-    image     VARVHAR(500)
+    image     VARCHAR(500)
 );
 
 CREATE TABLE Ticket (
@@ -38,13 +40,13 @@ CREATE TABLE Department (
 );
 
 CREATE TABLE Agent (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER,
   FOREIGN KEY (user_id) REFERENCES User(id)
 );
 
 CREATE TABLE Admin (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   agent_id INTEGER,
   FOREIGN KEY (agent_id) REFERENCES agent(id)
 );

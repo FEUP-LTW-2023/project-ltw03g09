@@ -5,6 +5,7 @@ session_start(); // start a new session
 unset($_SESSION['username']);
 unset($_SESSION['loggedin']);
 unset($_SESSION['agent_id']);
+unset($_SESSION['admin_id']);
 unset($_SESSION['departments']);
 
 // redirect to login page
