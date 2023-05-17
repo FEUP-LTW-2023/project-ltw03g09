@@ -32,7 +32,7 @@ const assignAgentUI = (ticketId) => {
     `;
     
     agents.forEach(agent => html += 
-        '<option id="' + agent[0] + '" value="' + agent[1] + '"/>' + agent[1] + '</option>')
+        '<option id="' + agent[1] + '" value="' + agent[0] + '"/>' + agent[1] + '</option>')
 
     html += `
             </select>

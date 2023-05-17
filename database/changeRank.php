@@ -20,6 +20,8 @@ error_log('agent_id: '.$agent_id);
 error_log('admin_id: '.$admin_id);
 error_log('rank: '.$rank);
 
+require_once('agentCleanUp.php');
+
 if($rank == "admin"){
     if(!$agent_id){
         changeRank('INSERT INTO agent (user_id) VALUES (?)', array($user_id),$db);
@@ -37,6 +39,7 @@ if($rank == "admin"){
 }else{
         if($admin_id) changeRank('DELETE from admin where id = ?',array($admin_id),$db);
         if($agent_id) changeRank('DELETE from agent where id = ?',array($agent_id),$db);
+        agentCleanUp($agent_id);
 }
 
 header('Location: ../adminPage.php');

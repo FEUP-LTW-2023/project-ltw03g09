@@ -212,3 +212,7 @@ a{
     align-items: center;
     justify-items: center;
 }
+.departmentSpan {
+    border: dashed white 1px; margin: 2px;
+    cursor: pointer;
+}

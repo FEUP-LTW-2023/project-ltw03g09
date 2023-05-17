@@ -6,7 +6,8 @@ function fetchDepartmentAgents($department){
     $query = "select agent.id, user.username from agent, user, agentDepartment
     where user.id = agent.user_id and
     agentDepartment.agent_id = agent.id and
-    agentDepartment.department = ?";
+    agentDepartment.department = ?
+    order by user.username";
 
     $stmt = $db->prepare($query);
     $stmt->execute(array($department));

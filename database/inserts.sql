@@ -26,7 +26,8 @@ INSERT INTO Department VALUES
 INSERT INTO AgentDepartment (agent_id, department) VALUES
   (3,'Tax fraud'),
   (3,'Accounting'),
-  (2, 'HR');
+  (2, 'HR'),
+  (2, 'Tax fraud');
   
 INSERT INTO Ticket VALUES
   (1, 'title1', 'lorem ipsum', 5, 'open', 'Tax fraud', 'urgent', '#hashtag', 1, 'date'),
