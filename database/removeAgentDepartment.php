@@ -18,10 +18,11 @@ $db = getDatabaseConnection();
 //$stmt = $db->prepare($query);
 //$stmt->execute(array($agent_id, $department));
 
-$query = "delete from agentDepartment where agent_id =".$agent_id." and department = ?";
+$query = "delete from agentDepartment where agent_id = ? and department = ?";
+error_log($query);
 
 $stmt = $db->prepare($query);
-$stmt->execute(array($department));
+$stmt->execute(array($agent_id, $department));
 
 error_log("did it work");
 

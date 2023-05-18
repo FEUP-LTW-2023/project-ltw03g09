@@ -58,8 +58,10 @@ CREATE TABLE UserTickets (
 );
 
 CREATE TABLE AgentDepartment (
-  agent_id REFERENCES Agent,
-  department REFERENCES Department
+  agent_id INTEGER,
+  department VARCHAR(20),
+  FOREIGN KEY (agent_id) REFERENCES agent(id),
+  FOREIGN KEY (department) REFERENCES department(name)
 );
 
 CREATE TABLE Comment (

@@ -48,7 +48,7 @@
                 error_log("agent_id: ".$agent_id);
         ?>
 
-            <form class="userBanner" method="post" action="database/newDepartmentAgent.php">
+            <div class="userBanner" method="post" action="database/newDepartmentAgent.php">
                 <p style="grid-column: 1"><?php echo $agent['username']?></p>
 
                 <div class ='agentDepartmentList' style="grid-column: 2; display:flex;flex-direction:column">
@@ -75,13 +75,13 @@
                         }
                     ?>
                 </select>
-                <input style="grid-column: 4" type="submit" name="submit" value="assign department">
+                <input style="grid-column: 4" type="submit" name="submit" value="assign department"
+                onclick="addAgentDepartment(<?php echo $agent_id ?>)">
                 <input type="hidden" name="agent_id" value=<?php echo $agent_id ?>>
-            </form> 
+            </div> 
 
         <?php 
             }
-            $agents = null;
         ?>
 
     </div>
