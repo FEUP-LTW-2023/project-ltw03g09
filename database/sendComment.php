@@ -6,8 +6,9 @@ function sendComment($text, $ticket_id, $user_id){
 
     $query = "INSERT INTO Comment (text, ticket_id, user_id, date) VALUES (?,?,?,?)";
 
+
     $stmt = $db->prepare($query);
-    $stmt->execute(array($text, $ticket_id, $user_id, "date"));
+    $stmt->execute(array($text, $ticket_id, $user_id, time() * 1000 ));
     $tickets = $stmt->fetchAll();
     
 }

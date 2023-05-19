@@ -44,8 +44,9 @@ $departments = fetchDepartments();
 	    <input type="submit" name="submit" value="submit">
     </form>
     <script>
-    var currentDate = new Date();
-    var dateString = currentDate.toISOString();
+    var currentDate = Date.now();
+    var dateString = currentDate;
+    console.log(currentDate)
     document.getElementById("currentdate").value = dateString;
   </script>
     <?php include('footer.php')?>

@@ -58,7 +58,7 @@
             <p>department: <div id='department'><?php echo $department ?></div></p>    
             <p>label: <?php echo $label ?></p>   
             <p>priority: <?php echo $priority ?></p>    
-            <p>date: <?php echo $date ?></p>   
+            <p>date: <div id='date'><?php echo $date ?></div></p>   
         </div>
         <div class="assignAgent">
             <?php
@@ -100,4 +100,5 @@
     
     <?php include('footer.php')?>
 </body>
+<script src ="scripts/date.js"></script>
 </html>

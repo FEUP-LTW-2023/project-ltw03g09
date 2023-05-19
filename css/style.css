@@ -216,3 +216,7 @@ a{
     border: dashed white 1px; margin: 2px;
     cursor: pointer;
 }
+
+.agentDepartments{
+    border-bottom: solid white 2px;
+}

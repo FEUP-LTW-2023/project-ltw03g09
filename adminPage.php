@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html>
 <script src ="scripts/removeAgentDepartment.js"></script>
+<script src ="scripts/departments.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <head>
     <title>Homepage</title>
@@ -77,14 +78,35 @@
                 </select>
                 <input style="grid-column: 4" type="submit" name="submit" value="assign department"
                 onclick="addAgentDepartment(<?php echo $agent_id ?>)">
-                <input type="hidden" name="agent_id" value=<?php echo $agent_id ?>>
             </div> 
 
         <?php 
             }
         ?>
-
     </div>
+    <div class="departmentList" style="display:flex;flex-direction:column;justify-content:center;color:#fff">
+            <?php 
+                require_once('database/fetchDepartments.php');
+                $departments = fetchDepartments();
+
+                foreach($departments as $department){
+            ?>
+                    <span class="departmentSpan" onclick='removeDepartment("<?php echo $department ?>",this)'>
+                        <?php echo $department ?>
+                    </span>
+
+            <?php
+                }
+            ?>
+    </div>
+    <div class="addDepartment">
+        <div class="userBanner" onclick="addDepartment()">
+                <h3>add department</h3>
+                <input id="addDepartmentBox" style="grid-column: 1" type="text" name="department" value=""/>
+                <input style="grid-column: 2" type="submit" name="submit" value="add department"/>
+        </div>
+    </div>
+
     <?php include('footer.php')?>
 </body>
 </html>

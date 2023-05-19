@@ -69,5 +69,5 @@ CREATE TABLE Comment (
     text VARCHAR(100),
     ticket_id REFERENCES Ticket,
     user_id REFERENCES User,
-    date Date
+    date VARCHAR(50)
 )
