@@ -23,6 +23,7 @@
             <option value='username'>username</option>
             <option value='department'>department</option>
             <option value='label'>label</option>
+            <option value='status'>status</option>
         </select>
         <select id="filterQuery2" class="profileTextbox"
         onchange="filterTickets(document.getElementById('filterQuery1').value, document.getElementById('filterQuery2').value)">

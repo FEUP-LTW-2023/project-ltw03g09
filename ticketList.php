@@ -11,24 +11,22 @@
                 $assignedAgent = $ticket['assignedAgent'];
                 $date = $ticket['date'];
                 $username = $ticket['username'];
-            
-                $html = <<<HTML
-                    <div class ='ticketBanner' id=$ticket_id onclick=goToTicketPage($ticket_id)>
+?>
+                    <div class ='ticketBanner' id=$ticket_id onclick=goToTicketPage(<?php echo $ticket_id ?>)>
                         <div class='ticketHeader'>
-                            <h3>$title</h3>
-                            <p id='status'>$status</p>
+                            <h3><?php echo $title ?></h3>
+                            <p id='status'><?php echo $status ?></p>
                         </div>
-                        <p>$text</p>
+                        <!--<p>$text</p>-->
                         <div id='ticketSocials'>
-                            <p>username: <p id='username'>$username</p></p>    
-                            <p>department: <p id='department'>$department</p></p>    
-                            <p>label: <p id='label'>$label</p></p>   
-                            <p>date: <p id='date'>$date</p></p>    
+                            <p>username: <p id='username'><?php echo $username ?></p></p>    
+                            <p>department: <p id='department'><?php echo $department ?></p></p>    
+                            <p>label: <p id='label'><?php echo $label ?></p></p>   
+                            <p>date: <p id='date'><?php echo $date ?></p></p>    
                             <!--<p>assignedAgent: <p id='asignedAgent'>$assignedAgent</p></p>-->
                         </div>
                     </div>
-                HTML;
-                echo $html;
+<?php
             }
-        ?>
+?>
 <script src ="scripts/date.js"></script>
