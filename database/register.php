@@ -8,6 +8,7 @@ if($password != $password2) header('Location: ../registerPage.php?passwordMismat
 $username = $_POST['username'];
 $name = $_POST['name'];
 $email = $_POST['email'];
+$image = $_POST['image'];
 
 require_once('connection.php');
 
@@ -18,8 +19,8 @@ $stmt->execute(array($username));
 $user = $stmt->fetch();
 
 if(!$user){
-    $stmt = $db->prepare("INSERT INTO user (username, name, password, email) VALUES (?,?,?,?)");
-    $stmt->execute(array($username, $name, $password, $email));
+    $stmt = $db->prepare("INSERT INTO user (username, name, password, email, image) VALUES (?,?,?,?,?)");
+    $stmt->execute(array($username, $name, $password, $email, $image));
     $user = $stmt->fetch();
 
     require_once('authenticate.php');

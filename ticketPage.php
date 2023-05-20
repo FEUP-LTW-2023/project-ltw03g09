@@ -31,6 +31,7 @@
 <script src ="scripts/changeStatus.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src ="scripts/assignAgent.js"></script>
+<script src ="scripts/departments.js"></script>
 
 <head>
     <title>Homepage</title>
@@ -44,8 +45,10 @@
             <h1><?php echo $title ?></h1>
             <p id='status'
                 <?php
-                    if(in_array($department, $_SESSION['departments'])){
-                        echo 'onclick="changeStatus('.$ticket_id.', this)"';
+                    if($_SESSION['departments']){
+                        if(in_array($department, $_SESSION['departments'])){
+                            echo 'onclick="changeStatus('.$ticket_id.', this,'.$_SESSION['agent_id'].')"';
+                        }
                     }
                 ?>><?php echo $status;?></p>
 
@@ -55,34 +58,36 @@
         </div>
         <div id="ticketSocials">
             <p>username: <?php echo $username ?></p>    
-            <p>department: <div id='department'><?php echo $department ?></div></p>    
+            <p>department: 
+                <div id='department'>
+                    <span>
+                    <?php
+                        if(!$_SESSION['agent_id']){
+                            echo $department;
+                        }else{
+                            echo '<select id="departmentSelect" class="profileTextbox" name="department">';
+
+                            require_once('database/fetchDepartments.php');
+                            $departments = fetchDepartments();
+
+                            foreach($departments as $d){
+                                $selected = '';
+                                if($d == $department) $selected = "selected";
+                                echo '<option onclick="changeTicketDepartment('.$ticket_id.','.$_SESSION['agent_id'].')" value="'.$d.'" '.$selected.'>'.$d.'</option>';
+                            }
+                        }
+                        
+                    ?>
+                    </select>
+                </div>
+            </p>    
             <p>label: <?php echo $label ?></p>   
-            <p>priority: <?php echo $priority ?></p>    
-            <p>date: <?php echo $date ?></p>   
+            <p>date: <div id='date'><?php echo $date ?></div></p>   
         </div>
         <div class="assignAgent">
-            <?php
 
-                
-                require_once('database/fetchDepartmentAgents.php');
-                $agents = fetchDepartmentAgents($department);
+            
 
-                echo '<script>const agents = ' . json_encode($agents) . ';</script>';
-
-                if(in_array($department, $_SESSION['departments'])){
-                    $html = <<<HTML
-                    <script>
-                        const status = document.querySelector("#status").textContent;
-                        console.log("ASSIGNN UI AGENT")
-                        console.log("status", status)
-                        console.log(status)
-                        if(status === "open") assignAgentUI($ticketId);    
-                        else document.querySelector('.assignAgent').innerHTML = "";
-                    </script>
-                    HTML;
-                    echo $html;
-                }  
-            ?>
         </div>
     </div>
     <h3>comments</h3>
@@ -100,4 +105,5 @@
     
     <?php include('footer.php')?>
 </body>
+<script src ="scripts/date.js"></script>
 </html>

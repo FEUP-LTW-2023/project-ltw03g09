@@ -32,8 +32,8 @@ function authenticate($username, $password){
 			$_SESSION['agent_id'] = $user['agent_id'];
 
     		$db = getDatabaseConnection();
-			$stmt2 = $db->prepare("SELECT department from agentDepartment where agent_id = 3");
-			$stmt2->execute();
+			$stmt2 = $db->prepare("SELECT department from agentDepartment where agent_id = ?");
+			$stmt2->execute(array($_SESSION['agent_id']));
 			$departments = $stmt2->fetchAll();
 			
 

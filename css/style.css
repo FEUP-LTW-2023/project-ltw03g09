@@ -68,6 +68,9 @@ a{
 
 #footer{
     margin-top: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1em;
 }
 
 .profileButtonForm {
@@ -195,4 +198,28 @@ a{
 .profileIcon:hover{
    transform:scale(1.2); 
    transition-duration: 0.5s;
+}
+
+.userList {
+    margin: 2em;
+    border-bottom: solid white 2px;
+}
+
+.userBanner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: #fff;
+    padding: 1em;
+    border: solid white 2px;
+    border-bottom-width: 0px;
+    align-items: center;
+    justify-items: center;
+}
+.departmentSpan {
+    border: dashed white 1px; margin: 2px;
+    cursor: pointer;
+}
+
+.agentDepartments{
+    border-bottom: solid white 2px;
 }

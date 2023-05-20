@@ -23,6 +23,8 @@
 	<input type="text" name="name" >
 	<p/>EMAIL
 	<input type="text" name="email" >
+	<p/>IMAGE URL
+  <input type="text" name="image" >
 	<p/>
 	<input type="submit" name="submit" value="login">
 	<p/>
