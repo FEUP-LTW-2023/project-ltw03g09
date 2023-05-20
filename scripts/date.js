@@ -28,3 +28,4 @@ const printDate = () => {
 }
 
 printDate();
+console.log("wtf")

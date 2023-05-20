@@ -20,18 +20,18 @@ INSERT INTO Department VALUES
   ('Accounting'),
   ('Investigation'),
   ('Production'),
-  ('Tax fraud'),
+  ('TaxFraud'),
   ('HR');
   
 INSERT INTO AgentDepartment (agent_id, department) VALUES
-  (3,'Tax fraud'),
+  (3,'TaxFraud'),
   (3,'Accounting'),
   (2, 'HR'),
-  (2, 'Tax fraud');
+  (2, 'TaxFraud');
   
 INSERT INTO Ticket VALUES
-  (1, 'title1', 'lorem ipsum', 5, 'open', 'Tax fraud', 'urgent', '#hashtag', 1, 'date'),
-  (2, 'title2', 'lorem ipsum', 5, 'open', 'Tax fraud', 'urgent', '#hashtag', 2, 'date'),
+  (1, 'title1', 'lorem ipsum', 5, 'open', 'TaxFraud', 'urgent', '#hashtag', 1, 'date'),
+  (2, 'title2', 'lorem ipsum', 5, 'open', 'TaxFraud', 'urgent', '#hashtag', 2, 'date'),
   (3, 'title3', 'lorem ipsum', 5, 'open', 'Accounting', 'urgent', '#hashtag', 3, 'date'),
   (4, 'title4', 'lorem ipsum', 4, 'open', 'Accounting', 'urgent', '#hashtag', 2, 'date'),
-  (5, 'title5', 'lorem ipsum', 4, 'open', 'Tax fraud', 'urgent', '#hashtag', 3, 'date');
+  (5, 'title5', 'lorem ipsum', 4, 'open', 'TaxFraud', 'urgent', '#hashtag', 3, 'date');

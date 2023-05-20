@@ -36,3 +36,21 @@ const removeDepartment = (department, element) => {
         }
     });
 }
+
+const changeTicketDepartment = (ticket_id, agent_id) => {
+
+    console.log("change ticket department");
+    
+    const newDepartment = document.querySelector("#departmentSelect").value;
+    
+    $.ajax({
+        url: "../database/changeDepartment.php",
+        type: "POST",
+        data: {ticket_id: ticket_id, department: newDepartment},
+        success: function(response){
+            console.log("department change success")
+        }
+    });
+
+   assignAgentUI(ticket_id, agent_id) 
+}

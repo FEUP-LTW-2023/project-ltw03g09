@@ -33,11 +33,11 @@ function getNotAgentDepartments($db, $agent_id){
     //$stmt = $db->prepare('select name from department except select department from agentDepartment where agent_id = ?');
     //$stmt->execute(array($agent_id));
 
-    $query = 'select name from department where name not in (select department from agentdepartment where agent_id = '.$agent_id.')';
+    $query = 'select name from department where name not in (select department from agentdepartment where agent_id = ?)';
 error_log($query);
 
     $stmt = $db->prepare($query);
-    $stmt->execute();
+    $stmt->execute(array($agent_id));
 
     $departments = $stmt->fetchAll();
     return $departments;
