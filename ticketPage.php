@@ -36,6 +36,7 @@
 <head>
     <title>Homepage</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/ticketPage.css" rel="stylesheet">
 </head>
 <body>
     <?php include('header.php')?>
@@ -90,7 +91,7 @@
 
         </div>
     </div>
-    <h3>comments</h3>
+    <h3>Comments</h3>
     <div class="commentSection">
         <div class="comments">
             <?php include('commentList.php'); ?>

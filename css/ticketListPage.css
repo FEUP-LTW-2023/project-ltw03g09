@@ -51,26 +51,6 @@ body {
     text-align: center;
   }
   
-  .ticketList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .ticketBanner {
-    background-color: #007bff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-    padding: 20px;
-    margin: 10px;
-    width: 350px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
   .ticketBanner h3 {
     margin: 0;
     font-size: 20px;
@@ -88,13 +68,6 @@ body {
     font-weight: bold;
   }
   
-  #ticketSocials {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    overflow: auto;
-  }
-  
   #ticketSocials p {
     margin: 3px 0;
     font-size: 12px;
@@ -108,4 +81,11 @@ body {
     margin-right: 5px;
     font-weight: bold;
   }
-  
+
+.existingFilter  > p{
+    color: black;
+}
+
+.ticketBanner {
+  background-color: #007bff;
+}

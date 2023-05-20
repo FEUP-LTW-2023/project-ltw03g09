@@ -19,6 +19,7 @@ $departments = fetchDepartments();
 <head>
     <title>Ticket page</title>
     <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/createTicketPage.css" rel="stylesheet"/>
 </head>
 <body>
     <?php include('header.php')?>
@@ -29,7 +30,7 @@ $departments = fetchDepartments();
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <p/>
         <select id="departments" class="profileTextbox" name="department">
-            <option value='' disabled selected>department</option>
+            <option value='' disabled selected>Department</option>
             <?php
                 foreach($departments as $department){
                     echo '<option value="'.$department.'"/>'.$department.'</option>';
@@ -51,4 +52,4 @@ $departments = fetchDepartments();
   </script>
     <?php include('footer.php')?>
 </body>
-</html
+</html>

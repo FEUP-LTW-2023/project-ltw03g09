@@ -1,0 +1,56 @@
+body {
+    background-color: white;
+  }
+  
+  h1 {
+    color: black;
+  }
+  
+  p {
+    color: black;
+  }
+  
+  .profileTextbox {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  select {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  ::placeholder {
+    color: rgb(171, 169, 169);
+  }
+
+  #departments option[disabled] {
+  color: rgb(171, 169, 169);
+}
