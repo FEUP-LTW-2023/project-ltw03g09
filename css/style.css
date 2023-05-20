@@ -200,7 +200,6 @@ a{
    transition-duration: 0.5s;
 }
 
-<<<<<<< HEAD
 .userList {
     margin: 2em;
     border-bottom: solid white 2px;
@@ -224,7 +223,6 @@ a{
 .agentDepartments{
     border-bottom: solid white 2px;
 }
-=======
 
 
 #footer {
@@ -284,4 +282,3 @@ a{
     opacity: 0.8;
   }
   
->>>>>>> 903e24c (home, and ticket view done)
