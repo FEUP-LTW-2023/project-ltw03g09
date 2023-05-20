@@ -15,16 +15,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <head>
     <title>Profile page</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/profilePage.css" rel="stylesheet">
 </head>
 <body>
     <?php include('header.php')?>
     <h1>profile page </h1>
 
     <form action="database/updateProfile.php" method="post">
-	    <p>username: <input type="text" name="username" class="profileTextbox" value=<?php echo $_SESSION['username']; ?>></p>
-	    <p>name: <input type="text" name="name" class="profileTextbox" value=<?php echo $_SESSION['name']; ?>></p>
-	    <p>email: <input type="text" name="email" class="profileTextbox" value=<?php echo $_SESSION['email']; ?>></p>
-	    <p>image url: <input type="text" name="image" class="profileTextbox" value=<?php echo $_SESSION['image']; ?>></p>
+	    <p>Username: <input type="text" name="username" class="profileTextbox" value=<?php echo $_SESSION['username']; ?>></p>
+	    <p>Name: <input type="text" name="name" class="profileTextbox" value=<?php echo $_SESSION['name']; ?>></p>
+	    <p>Email: <input type="text" name="email" class="profileTextbox" value=<?php echo $_SESSION['email']; ?>></p>
+	    <p>Image url: <input type="text" name="image" class="profileTextbox" value=<?php echo $_SESSION['image']; ?>></p>
 
 	    <input type="submit" name="submit" value="update profile">
     </form>

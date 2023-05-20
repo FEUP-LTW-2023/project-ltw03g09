@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <link href="layout.css" rel="stylesheet">
     <link href="responsive.css" rel="stylesheet">
     <link href="comments.css" rel="stylesheet">
     <link href="forms.css" rel="stylesheet">
   </head>
   <body>
-    <h1>login</h1>
-    <form action="database/authenticate.php" method="post">
-	    <input type="text" name="username" >
-	    <input type="password" name="password" >
-	    <input type="submit" name="submit" value="login">
-    </form>
-    <a href="registerPage.php">register</a>
+    <h1>LOGIN</h1>
+    <div class="blurred-line"></div>
+    <div class="form-container">
+      <form action="database/authenticate.php" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="submit" value="Login">
+      </form>
+    </div>
+    <a href="registerPage.php">Register</a>
   </body>
 </html>
+
 
 
 <?php

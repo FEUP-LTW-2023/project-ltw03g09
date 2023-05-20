@@ -1,4 +1,4 @@
-<script src ="scripts/goToTicketPage.js"></script>
+<script src="scripts/goToTicketPage.js"></script>
 <?php
             foreach($tickets as $ticket){
                 $ticket_id = $ticket['ticketId'];
@@ -29,4 +29,19 @@
 <?php
             }
 ?>
-<script src ="scripts/date.js"></script>
+<!--/*            <div class='ticketBanner' id=$ticket_id onclick=goToTicketPage($ticket_id)>
+                <div class='ticketHeader'>
+                    <h3>$title</h3>
+                    <p id='status'>$status</p>
+                </div>
+                <p>$text</p>
+                <div id='ticketSocials'>
+                    <p><span>username:</span> <span id='username'>$username</span></p>
+                    <p><span>department:</span> <span id='department'>$department</span></p>
+                    <p><span>label:</span> <span id='label'>$label</span></p>
+                    <p><span>priority:</span> <span id='priority'>$priority</span></p>
+                    <p><span>date:</span> <span id='date'>$date</span></p>
+                </div>
+            </div>
+        -->
+</div>

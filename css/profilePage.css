@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+  }
+  
+  h1 {
+    color: #007bff;
+  }
+  
+  .profileTextbox {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  body  p{
+    color: black;
+  }
