@@ -21,7 +21,7 @@
         <input type="submit" name="submit" value="Login">
       </form>
     </div>
-    <a href="registerPage.php">Register</a>
+    <a href="pages/registerPage.php">Register</a>
   </body>
 </html>
 

@@ -4,18 +4,18 @@
     <title>Trouble Tickets</title>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <link href="css/registerPage.css" rel="stylesheet">
-    <link href="layout.css" rel="stylesheet">
-    <link href="responsive.css" rel="stylesheet">
-    <link href="comments.css" rel="stylesheet">
-    <link href="forms.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/registerPage.css" rel="stylesheet">
+    <link href="../css/layout.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <link href="../css/comments.css" rel="stylesheet">
+    <link href="../css/forms.css" rel="stylesheet">
   </head>
   <body>
     <h1>REGISTER</h1>
     <div class="blurred-line"></div>
     <div class="form-container">
-      <form action="database/register.php" method="post">
+      <form action="../database/register.php" method="post">
         <label for="username">USERNAME</label>
         <input type="text" name="username" id="username">
         <label for="password">PASSWORD</label>
@@ -32,7 +32,7 @@
         <input type="submit" name="submit" value="REGISTER">
       </form>
     </div>
-    <a href="index.php">LOGIN</a>
+    <a href="../index.php">LOGIN</a>
   </body>
 </html>
 
