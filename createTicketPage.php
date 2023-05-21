@@ -28,10 +28,11 @@ $departments = fetchDepartments();
 </style>
 <body>
 <?php include('header.php')?>
-    <h1>Ticket page</h1>
+    <h1>Ticket creation</h1>
     <p>This is where tickets are created</p>
 
     <form class="bigSquare" action="database/createTicket.php" method="post">  
+        <h2 style="align-self: center">Create a Ticket</h2>
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <div style="display: flex;flex-direction: row;">
             <select id="departments" class="profileTextbox" name="department">
@@ -46,7 +47,7 @@ $departments = fetchDepartments();
         </div>
         <textarea name="text" class="profileTextbox" rows="10" cols="50" placeholder="text"></textarea>
         <input type="hidden" id="currentdate" name="date" readonly>
-	    <input style="align-self: flex-end;width: 10%" type="submit" name="submit" value="submit">
+	    <input style="align-self: flex-end;width: 20%" type="submit" name="submit" value="submit">
     </form>
     <script>
     var currentDate = Date.now();

@@ -99,3 +99,8 @@ body {
 #ticketSocials {
   align-items: center;
 }
+
+.existingFilter{
+  border-color: #007bff;
+  cursor: pointer;
+}

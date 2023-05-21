@@ -1,9 +1,11 @@
 <?php
-
 $password = $_POST['password'];
 $password2 = $_POST['password2'];
 
-if($password != $password2) header('Location: ../registerPage.php?passwordMismatch=true');
+$hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$hash2 = password_hash($_POST['password2'], PASSWORD_DEFAULT);
+
+if($hash != $hash2) header('Location: ../registerPage.php?passwordMismatch=true');
 
 $username = $_POST['username'];
 $name = $_POST['name'];
@@ -20,7 +22,7 @@ $user = $stmt->fetch();
 
 if(!$user){
     $stmt = $db->prepare("INSERT INTO user (username, name, password, email, image) VALUES (?,?,?,?,?)");
-    $stmt->execute(array($username, $name, $password, $email, $image));
+    $stmt->execute(array($username, $name, $hash, $email, $image));
     $user = $stmt->fetch();
 
     require_once('authenticate.php');

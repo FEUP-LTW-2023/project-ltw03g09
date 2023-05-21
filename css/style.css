@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
     /*max-height: 100vh;
     height: 100vh;*/
+    font-family: 'Space Mono', monospace;
 }
 
 h1, h2, h3, p, span{color: #fff}
@@ -151,12 +152,10 @@ a{
 }
 
 .commentSection{
-
+margin-top: auto;
 }
 
 .comments {
-    overflow: scroll;
-    max-height: 70vh;
     margin-left: 1em;
     margin-right: 1em;
 
@@ -227,7 +226,12 @@ a{
     justify-items: center;
 }
 .departmentSpan {
-    border: dashed white 1px; margin: 2px;
+    display: flex;
+    justify-content:space-between;
+    border: dashed #007bff 2px; margin: 2px;
+    border-radius: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
     cursor: pointer;
 }
 
@@ -305,3 +309,26 @@ a{
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8)
   }
   
+  @font-face {
+    font-family: 'Space Mono';
+    src: url('path/to/space-mono.woff2') format('woff2'),
+         url('path/to/space-mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+@media (max-width: 800px) {
+    .bigSquare{
+        width: 90%;
+        margin: 0em;
+        padding: 1em;
+    }
+
+    input{width: 80%;}
+
+    .mainInterface{
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+}

@@ -10,7 +10,7 @@ const filterTickets = (lambda, str) => {
     
 
     //filter tickets
-    const impostors = [...document.querySelectorAll('#' + lambda)].filter(x => x.textContent != str).map(x => x.parentElement.parentElement)
+    const impostors = [...document.querySelectorAll('#' + lambda)].filter(x => x.textContent != str).map(x => x.parentElement.parentElement.parentElement)
     console.log(impostors)
     impostors.map(ticket => {
         ticket.classList.add('invisibleTicket')
