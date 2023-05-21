@@ -21,3 +21,27 @@ h2 {align-self: center;}
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+
+
+
+
+@media (max-width: 800px) {
+    .bigSquare{
+        width: 90%;
+        margin: 0em;
+        padding: 1em;
+        
+    }
+    
+    input{width: 80%;}
+    
+    .userBanner{
+        overflow:scroll;
+        display:flex;
+        gap: 10px;
+    }   
+    .addDepartment > .userBanner{
+        flex-direction: column;
+    }
+}
