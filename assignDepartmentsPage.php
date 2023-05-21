@@ -31,7 +31,7 @@
         ?>
 
             <div class="userBanner" id="agent_<?php echo $agent_id ?>">
-                <div style="grid-column:1;display:flex;align-items:center" onclick="window.location.href='profilePage2.php?user_id=<?php echo $agent['user_id']?>'">
+                <div style="grid-column:1;display:flex;align-items:center;justify-self:flex-start" onclick="window.location.href='profilePage2.php?user_id=<?php echo $agent['user_id']?>'">
                     <img class="profileIcon" src="<?php echo $agent['image'] ?>"/>
                     <span style="color:#000"><?php echo $agent['username']?></span>
                 </div>
@@ -88,10 +88,10 @@
                     ?>
             </div>
             <div class="addDepartment">
-                <div class="userBanner" onclick="addDepartment()">
+                <div class="userBanner">
                         <h3>add department</h3>
                         <input id="addDepartmentBox" style="grid-column: 1" type="text" name="department" value=""/>
-                        <input style="grid-column: 2" type="submit" name="submit" value="add department"/>
+                        <input onclick="addDepartment()" style="grid-column: 2" type="submit" name="submit" value="add department"/>
                 </div>
             </div>
         </div>
