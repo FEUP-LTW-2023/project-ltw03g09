@@ -20,8 +20,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
     <?php include('header.php')?>
     <h1>Welcome, <?php echo $_SESSION['hierarchy']." ".$_SESSION['username']; ?>!</h1>
-    <p style="display:flex;justify-content:center;max-width:50%;align-self:center;">Welcome to our ticket submission platform! Submit tickets effortlessly and track their progress in real-time. Our dedicated team of agents provides prompt and reliable support. We value your feedback to improve our services. Join our community for a seamless ticketing experience.</p>
-
+    <p>Welcome to our ticket submission platform!</p>
+    <p>Submit tickets effortlessly and track their progress in real-time.</p>
+    <p>Our dedicated team of agents provides prompt and reliable support.</p>
+    <p>Join our community for a seamless ticketing experience.</p>
     <div class="mainInterface">
         
         <div class="interfaceButton" onclick="window.location.href = 'ticketListPage.php'">

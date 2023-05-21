@@ -28,3 +28,16 @@ body {
   body  p{
     color: black;
   }
+  
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .header {
+    display: none;
+  }
+  .menu {
+    width: 100%;
+  }
+}
+  
