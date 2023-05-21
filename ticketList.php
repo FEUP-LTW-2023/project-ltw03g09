@@ -11,6 +11,7 @@
                 $assignedAgent = $ticket['assignedAgent'];
                 $date = $ticket['date'];
                 $username = $ticket['username'];
+                $image = $ticket['image'];
 ?>
                     <div class ='ticketBanner' id=$ticket_id onclick=goToTicketPage(<?php echo $ticket_id ?>)>
                         <div class='ticketHeader'>
@@ -19,10 +20,13 @@
                         </div>
                         <!--<p>$text</p>-->
                         <div id='ticketSocials'>
-                            <p>username: <p id='username'><?php echo $username ?></p></p>    
-                            <p>department: <p id='department'><?php echo $department ?></p></p>    
-                            <p>label: <p id='label'><?php echo $label ?></p></p>   
-                            <p>date: <p id='date'><?php echo $date ?></p></p>    
+                            <div style="display: flex;align-items:center">
+                                <img class="profileIcon" src="<?php echo $image?>"/>
+                                <span id='username'><?php echo $username ?></span>
+                            </div>
+                            <span>department: <span id='department'><?php echo $department ?></span></span>    
+                            <span>label: <span id='label'><?php echo $label ?></span></span>   
+                            <span>date: <span id='date'><?php echo $date ?></span></span>    
                             <!--<p>assignedAgent: <p id='asignedAgent'>$assignedAgent</p></p>-->
                         </div>
                     </div>

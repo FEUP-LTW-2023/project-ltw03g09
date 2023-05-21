@@ -72,6 +72,11 @@ body {
     margin: 3px 0;
     font-size: 12px;
   }
+
+  #ticketSocials span {
+    margin: 3px 0;
+    font-size: 12px;
+  }
   
   #ticketSocials p:first-child {
     margin-top: 10px;
@@ -88,4 +93,9 @@ body {
 
 .ticketBanner {
   background-color: #007bff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8)
+}
+
+#ticketSocials {
+  align-items: center;
 }
