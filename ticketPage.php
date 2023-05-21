@@ -65,8 +65,7 @@
                 <div id='department' >
                     <span>
                     <?php
-                        foreach($_SESSION['departments'] as $popo){echo $popo."YOYOYOYOYO<br/>";}
-                        if(!$_SESSION['agent_id'] || in_array($department, $_SESSION['departments'])){
+                        if(!$_SESSION['agent_id'] || !in_array($department, $_SESSION['departments'])){
                             echo $department;
                         }else{
                             echo '<select id="departmentSelect" class="profileTextbox" style="box-shadow:none" name="department">';
