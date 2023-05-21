@@ -27,7 +27,7 @@
             foreach($users as $user){
         ?>
             <form class="userBanner" method="post" action="database/changeRank.php">
-            <div style="display: flex;justify-self:stretch">
+            <div style="display: flex;justify-self:stretch" onclick="window.location.href='profilePage2.php?user_id=<?php echo $user['user_id']?>'">
                 <img class="profileIcon" src="<?php echo $user['image']?>">
                 <p style="grid-column: 1"><?php echo $user['username']?></p>
             </div>

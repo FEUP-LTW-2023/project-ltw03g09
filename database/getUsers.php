@@ -13,7 +13,7 @@ function getUsers($db){
 
 function getAgents($db){
  
-    $stmt = $db->prepare('SELECT agent.id as agent_id, user.username as username, user.image from agent, user
+    $stmt = $db->prepare('SELECT agent.id as agent_id, user.username as username, user.id as user_id, user.image as image from agent, user
     where agent.user_id = user.id');
     $stmt->execute();
     $agents = $stmt->fetchAll();

@@ -28,10 +28,11 @@ $departments = fetchDepartments();
 </style>
 <body>
 <?php include('header.php')?>
-    <h1>Ticket page</h1>
+    <h1>Ticket creation</h1>
     <p>This is where tickets are created</p>
 
     <form class="bigSquare" action="database/createTicket.php" method="post">  
+        <h2 style="align-self: center">Ticket creation</h2>
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <div style="display: flex;flex-direction: row;">
             <select id="departments" class="profileTextbox" name="department">

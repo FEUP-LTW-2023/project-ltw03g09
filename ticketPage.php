@@ -57,7 +57,10 @@
             <p><?php echo $text ?></p>
         </div>
         <div id="ticketSocials">
-            <div style="display:flex;align-items:center"><img class="profileIcon" src="<?php echo $image ?>"/><span><?php echo $username ?></span></div>    
+            <div style="display:flex;align-items:center" onclick="window.location.href='profilePage2.php?user_id=<?php echo $user_id?>'">
+                <img class="profileIcon" src="<?php echo $image ?>"/>
+                <span><?php echo $username ?></span>
+            </div>    
             <span style="display:flex;align-items:center">department: 
                 <div id='department' >
                     <span>

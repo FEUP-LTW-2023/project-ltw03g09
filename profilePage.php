@@ -7,7 +7,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-// user is logged in, show page content
+$user_id = $_GET['user_id'];
+
 ?>
 
 <!DOCTYPE html>

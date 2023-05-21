@@ -31,8 +31,10 @@
         ?>
 
             <div class="userBanner" id="agent_<?php echo $agent_id ?>">
-                <p style="grid-column: 1"><?php echo $agent['username']?></p>
-
+                <div style="grid-column:1;display:flex;align-items:center" onclick="window.location.href='profilePage2.php?user_id=<?php echo $agent['user_id']?>'">
+                    <img class="profileIcon" src="<?php echo $agent['image'] ?>"/>
+                    <span style="color:#000"><?php echo $agent['username']?></span>
+                </div>
                 <div class ='agentDepartmentList' style="grid-column: 2; display:flex;flex-direction:column">
                     <?php
                         $agentDepartments = getAgentDepartments($db, $agent['agent_id']);
