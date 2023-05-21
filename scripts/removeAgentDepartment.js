@@ -20,8 +20,12 @@ const removeAgentDepartment = (agent_id, department, element) => {
 }
 
 const addAgentDepartment = (agent_id) => {
+    
+    const userBanner = document.querySelector("#agent_"+agent_id+".userBanner")
+    console.log(userBanner)
 
-    const department = document.getElementById("departments").value;
+    const department = userBanner.querySelector("#departments").value;
+    console.log("department: ", department)
 
     $.ajax({
         url: "../database/addAgentDepartment.php",
@@ -30,7 +34,7 @@ const addAgentDepartment = (agent_id) => {
         success: function(response){
             console.log("great success")
             
-            const agentDepartmentList = document.querySelector('.agentDepartmentList')
+            const agentDepartmentList = userBanner.querySelector('.agentDepartmentList')
             
             
             const newDepartment = document.createElement('span');
@@ -40,7 +44,7 @@ const addAgentDepartment = (agent_id) => {
 
             agentDepartmentList.appendChild(newDepartment)
             
-            document.querySelector("#departments option[value='" + department + "']").remove();
+            userBanner.querySelector("#departments option[value='" + department + "']").remove();
             
         }
     });

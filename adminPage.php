@@ -49,7 +49,7 @@
                 error_log("agent_id: ".$agent_id);
         ?>
 
-            <div class="userBanner" method="post" action="database/newDepartmentAgent.php">
+            <div class="userBanner" id="agent_<?php echo $agent_id ?>">
                 <p style="grid-column: 1"><?php echo $agent['username']?></p>
 
                 <div class ='agentDepartmentList' style="grid-column: 2; display:flex;flex-direction:column">
