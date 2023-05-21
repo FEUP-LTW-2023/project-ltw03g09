@@ -29,15 +29,15 @@ body {
     color: black;
   }
   
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
+@media (max-width: 800px) {
+  .bigSquare{
+    width: 90%;
+    margin: 0em;
+    padding: 1em;
+    
   }
-  .header {
-    display: none;
-  }
-  .menu {
-    width: 100%;
-  }
+  
+  input{width: 80%;}
+
 }
   

@@ -316,3 +316,15 @@ margin-top: auto;
     font-weight: normal;
     font-style: normal;
   }
+  
+@media (max-width: 800px) {
+.bigSquare{
+    width: 90%;
+    margin: 0em;
+    padding: 1em;
+    
+}
+
+input{width: 80%;}
+
+}
