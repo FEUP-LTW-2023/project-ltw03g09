@@ -21,6 +21,6 @@ on root: ``php -S localhost:9000``
 
 open browser and go to ``localhost:9000``
 
-username: ``username``
+username: ``LittlePrincess``
 
 password: ``password``

@@ -13,10 +13,12 @@ INSERT INTO User VALUES
 INSERT INTO Agent (id, user_id) VALUES
   (1, 1),
   (2, 4),
-  (3, 5);
+  (3, 5),
+  (4, 6);
 
 INSERT INTO Admin (id, agent_id) VALUES
-  (1, 3);
+  (1, 3),
+  (2,4);
 
 INSERT INTO Department VALUES
   ('Accounting'),
@@ -30,7 +32,8 @@ INSERT INTO AgentDepartment (agent_id, department) VALUES
   (3,'Accounting'),
   (3,'HR'),
   (2, 'HR'),
-  (2, 'TaxFraud');
+  (2, 'TaxFraud'),
+  (4, 'HR');
   
   INSERT INTO Ticket VALUES
 
