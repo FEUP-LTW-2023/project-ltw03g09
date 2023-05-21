@@ -13,7 +13,12 @@ const removeAgentDepartment = (agent_id, department, element) => {
             newOption.setAttribute("value", department)
             newOption.innerHTML = department
             
-            document.getElementById("departments").appendChild(newOption);
+
+            console.log(element)
+            console.log(element.parentElement)
+            const userBanner = document.getElementById("agent_" + agent_id) 
+            
+            userBanner.querySelector("#departments").appendChild(newOption);
 
         }
     });
@@ -40,7 +45,12 @@ const addAgentDepartment = (agent_id) => {
             const newDepartment = document.createElement('span');
             newDepartment.setAttribute("class", "departmentSpan");
             newDepartment.setAttribute("onclick", "removeAgentDepartment(" + agent_id + ",'" + department + "',this)");
-            newDepartment.innerHTML = department;
+            const departmentClose = document.createElement('i');
+            departmentClose.setAttribute("style", "color:#007bff");
+            departmentClose.setAttribute("class", "fas fa-times");
+
+            newDepartment.textContent = department;
+            newDepartment.appendChild(departmentClose);
 
             agentDepartmentList.appendChild(newDepartment)
             

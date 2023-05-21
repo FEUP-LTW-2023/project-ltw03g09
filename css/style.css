@@ -155,8 +155,6 @@ a{
 }
 
 .comments {
-    overflow: scroll;
-    max-height: 70vh;
     margin-left: 1em;
     margin-right: 1em;
 
@@ -227,7 +225,12 @@ a{
     justify-items: center;
 }
 .departmentSpan {
-    border: dashed white 1px; margin: 2px;
+    display: flex;
+    justify-content:space-between;
+    border: dashed #007bff 2px; margin: 2px;
+    border-radius: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
     cursor: pointer;
 }
 

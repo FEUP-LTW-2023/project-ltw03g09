@@ -1,0 +1,23 @@
+body{
+    background: #fff;
+}
+h3{
+    color: #000;
+}
+.profileTextbox {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+h2, p, span{color:#000;}
+
+h2 {align-self: center;}
+
+.addRemoveDepartment {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

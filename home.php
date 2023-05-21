@@ -34,8 +34,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <?php
             if($_SESSION['admin_id']){
                 $html = <<<HTML
-                    <div class="interfaceButton" onclick="window.location.href = 'adminPage.php'">
-                        <p class="interfaceButtonString">admin stuff</p>
+                    <div class="interfaceButton" onclick="window.location.href = 'changeRankPage.php'">
+                        <p class="interfaceButtonString">change rank</p>
+                    </div>
+                    <div class="interfaceButton" onclick="window.location.href = 'assignDepartmentsPage.php'">
+                        <p class="interfaceButtonString">assign departments</p>
                     </div>
                 HTML;
                 echo $html;
