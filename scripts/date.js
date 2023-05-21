@@ -27,5 +27,6 @@ const printDate = () => {
     
 }
 
+console.log("wtf")
 printDate();
 console.log("wtf")

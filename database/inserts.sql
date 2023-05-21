@@ -30,8 +30,8 @@ INSERT INTO AgentDepartment (agent_id, department) VALUES
   (2, 'TaxFraud');
   
 INSERT INTO Ticket VALUES
-  (1, 'title1', 'lorem ipsum', 5, 'open', 'TaxFraud', 'urgent', '#hashtag', 1, 'date'),
-  (2, 'title2', 'lorem ipsum', 5, 'open', 'TaxFraud', 'urgent', '#hashtag', 2, 'date'),
-  (3, 'title3', 'lorem ipsum', 5, 'open', 'Accounting', 'urgent', '#hashtag', 3, 'date'),
-  (4, 'title4', 'lorem ipsum', 4, 'open', 'Accounting', 'urgent', '#hashtag', 2, 'date'),
-  (5, 'title5', 'lorem ipsum', 4, 'open', 'TaxFraud', 'urgent', '#hashtag', 3, 'date');
+  (1, 'title1', 'lorem ipsum', 5, 'open', 'TaxFraud', 'urgent', '#hashtag', 1, 1),
+  (2, 'title2', 'lorem ipsum', 5, 'open', 'TaxFraud', 'urgent', '#hashtag', 2, 1),
+  (3, 'title3', 'lorem ipsum', 5, 'open', 'Accounting', 'urgent', '#hashtag', 3, 1213213213),
+  (4, 'title4', 'lorem ipsum', 4, 'open', 'Accounting', 'urgent', '#hashtag', 2, 4321432),
+  (5, 'title5', 'lorem ipsum', 4, 'open', 'TaxFraud', 'urgent', '#hashtag', 3, 543289070);

@@ -21,35 +21,39 @@ $departments = fetchDepartments();
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/createTicketPage.css" rel="stylesheet"/>
 </head>
+<style>
+::placeholder{
+    color: #ddd; /*por algum motivo isto nao funciona no style.css*/
+}
+</style>
 <body>
-    <?php include('header.php')?>
+<?php include('header.php')?>
     <h1>Ticket page</h1>
     <p>This is where tickets are created</p>
 
-    <form action="database/createTicket.php" method="post">  
+    <form class="bigSquare" action="database/createTicket.php" method="post">  
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
-        <p/>
-        <select id="departments" class="profileTextbox" name="department">
-            <option value='' disabled selected>Department</option>
-            <?php
-                foreach($departments as $department){
-                    echo '<option value="'.$department.'"/>'.$department.'</option>';
-                }
-            ?>
-        </select>
-	    <input type="text" name="label" class="profileTextbox" placeholder="label (ex: #feupRulzzz)">
-        <p/>
+        <div style="display: flex;flex-direction: row;">
+            <select id="departments" class="profileTextbox" name="department">
+                <option value='' disabled selected>Department</option>
+                <?php
+                    foreach($departments as $department){
+                        echo '<option value="'.$department.'"/>'.$department.'</option>';
+                    }
+                ?>
+            </select>
+            <input style="width: 100%" type="text" name="label" class="profileTextbox" placeholder="label (ex: #feupRulzzz)">
+        </div>
         <textarea name="text" class="profileTextbox" rows="10" cols="50" placeholder="text"></textarea>
-        <p/>
         <input type="hidden" id="currentdate" name="date" readonly>
-	    <input type="submit" name="submit" value="submit">
+	    <input style="align-self: flex-end;width: 10%" type="submit" name="submit" value="submit">
     </form>
     <script>
     var currentDate = Date.now();
     var dateString = currentDate;
     console.log(currentDate)
     document.getElementById("currentdate").value = dateString;
-  </script>
+    </script>
     <?php include('footer.php')?>
 </body>
 </html>

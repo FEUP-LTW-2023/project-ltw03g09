@@ -1,0 +1,77 @@
+body{
+    background: #fff;
+}
+h3{
+    color: #000;
+}
+.profileTextbox {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.ticket{
+    background-color: #007bff;
+    border-radius: 1em;
+    max-width: 80%;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.comment{
+    background-color: #007bff;
+    border-radius: 2em;
+}
+
+.comments{
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+}
+
+.commentSection{
+}
+
+.commentUser{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.commentUsername{
+    color: #fff;
+}
+.inputComment{
+    background-color: #007bff;
+}
+.inputBoxComment{
+    background-color: #fff;
+    color: #000;
+}
+
+::placeholder{
+    color: #aaa;    
+}
+
+#ticketSocials {
+    align-items: center;
+    overflow: scroll;
+}
+
+#department{
+    display: flex;
+    flex-direction: row;
+}
+
+#date {
+    display: flex;
+    align-self: flex-end;
+    color: #fff;
+    justify-content: flex-end;
+}

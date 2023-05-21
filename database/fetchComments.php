@@ -6,7 +6,7 @@ function fetchComments($ticket_id){
 
     $db = getDatabaseConnection('database/');
 
-    $query = "select comment.*, user.username from comment, user where ticket_id = ? and comment.user_id = user.id";
+    $query = "select comment.*, user.username, user.image from comment, user where ticket_id = ? and comment.user_id = user.id";
 
     $stmt = $db->prepare($query);
     $stmt->execute(array($ticket_id));

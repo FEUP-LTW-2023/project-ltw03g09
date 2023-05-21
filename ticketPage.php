@@ -6,22 +6,21 @@
         $ticketId = $_GET['ticketId'];
         $ticket = fetchTicket($db, $ticketId);
 
+                $ticket_id = $ticket['ticketId'];
+                $title = $ticket['title'];
+                $text = $ticket['text'];
+                $user_id = $ticket['creator'];
+                $status = $ticket['status'];
+                $department = $ticket['department'];
+                $label = $ticket['label'];
+                $assignedAgent = $ticket['assignedAgent'];
+                $date = $ticket['date'];
+                $username = $ticket['username'];
+                $image = $ticket['image']; 
 
-        $ticket_id = $ticket[0];
-        $title = $ticket[1];
-        $text = $ticket[2];
-        $user_id = $ticket[3];
-        $status = $ticket[4];
-        $department = $ticket[5];
-        $priority = $ticket[6];
-        $label = $ticket[7];
-        $assignedAgent = $ticket[8];
-        $date = $ticket[9];
-        $username = $ticket[10];
 
         require_once('database/fetchComments.php');
         $comments = fetchComments($ticket_id);
-
 
         
 ?>
@@ -58,15 +57,15 @@
             <p><?php echo $text ?></p>
         </div>
         <div id="ticketSocials">
-            <p>username: <?php echo $username ?></p>    
-            <p>department: 
-                <div id='department'>
+            <div style="display:flex;align-items:center"><img class="profileIcon" src="<?php echo $image ?>"/><span><?php echo $username ?></span></div>    
+            <span style="display:flex;align-items:center">department: 
+                <div id='department' >
                     <span>
                     <?php
                         if(!$_SESSION['agent_id']){
                             echo $department;
                         }else{
-                            echo '<select id="departmentSelect" class="profileTextbox" name="department">';
+                            echo '<select id="departmentSelect" class="profileTextbox" style="box-shadow:none" name="department">';
 
                             require_once('database/fetchDepartments.php');
                             $departments = fetchDepartments();
@@ -81,15 +80,15 @@
                     ?>
                     </select>
                 </div>
-            </p>    
-            <p>label: <?php echo $label ?></p>   
-            <p>date: <div id='date'><?php echo $date ?></div></p>   
+            </span>    
+            <p><?php echo $label ?></p>   
         </div>
         <div class="assignAgent">
 
-            
+            <script >assignAgentUI(<?php echo $ticket_id?>,<?php echo $_SESSION['agent_id']?>)</script>
 
         </div>
+        <div id='date'><?php echo $date ?></div>   
     </div>
     <h3>Comments</h3>
     <div class="commentSection">
