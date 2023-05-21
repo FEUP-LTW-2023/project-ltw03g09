@@ -14,11 +14,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <html>
 <head>
     <title>Homepage</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/home.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
 </head>
 <body>
-    <?php include('header.php')?>
+    <?php include('../templates/header.php')?>
     <h1>Welcome, <?php echo $_SESSION['hierarchy']." ".$_SESSION['username']; ?>!</h1>
     <p>Welcome to our ticket submission platform!</p>
     <p>Submit tickets effortlessly and track their progress in real-time.</p>
@@ -48,8 +48,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         ?>
         
     </div>
-
-    
-    <?php include('footer.php')?>
+    <?php include('../templates/footer.php')?>
 </body>
 </html>

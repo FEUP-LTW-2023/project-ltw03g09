@@ -42,6 +42,6 @@ if($rank == "admin"){
         agentCleanUp($agent_id);
 }
 
-header('Location: ../changeRankPage.php');
+header('Location: ../pages/changeRankPage.php');
 
 ?>

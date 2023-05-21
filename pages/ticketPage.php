@@ -1,8 +1,8 @@
 <?php
         session_start();
-        require_once('database/fetchTicket.php');
-        require_once('database/connection.php');
-        $db = getDatabaseConnection('database/');
+        require_once('../database/fetchTicket.php');
+        require_once('../database/connection.php');
+        $db = getDatabaseConnection('../database/');
         $ticketId = $_GET['ticketId'];
         $ticket = fetchTicket($db, $ticketId);
 
@@ -19,7 +19,7 @@
                 $image = $ticket['image']; 
 
 
-        require_once('database/fetchComments.php');
+        require_once('../database/fetchComments.php');
         $comments = fetchComments($ticket_id);
 
         
@@ -27,18 +27,18 @@
 
 <!DOCTYPE html>
 <html>
-<script src ="scripts/changeStatus.js"></script>
+<script src ="../scripts/changeStatus.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src ="scripts/assignAgent.js"></script>
-<script src ="scripts/departments.js"></script>
+<script src ="../scripts/assignAgent.js"></script>
+<script src ="../scripts/departments.js"></script>
 
 <head>
     <title>Homepage</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/ticketPage.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/ticketPage.css" rel="stylesheet">
 </head>
 <body>
-    <?php include('header.php')?>
+    <?php include('../templates/header.php')?>
 
     <div class="ticket">
         <div class="ticketHeader">
@@ -70,7 +70,7 @@
                         }else{
                             echo '<select id="departmentSelect" class="profileTextbox" style="box-shadow:none" name="department">';
 
-                            require_once('database/fetchDepartments.php');
+                            require_once('../database/fetchDepartments.php');
                             $departments = fetchDepartments();
 
                             foreach($departments as $d){
@@ -96,9 +96,9 @@
     <h3>Comments</h3>
     <div class="commentSection">
         <div class="comments">
-            <?php include('commentList.php'); ?>
+            <?php include('../templates/commentList.php'); ?>
         </div>
-        <form class="inputComment" action="database/sendComment.php" method="post">
+        <form class="inputComment" action="../database/sendComment.php" method="post">
             <input type="text" name="text" class="inputBoxComment" placeholder="comment here..."/>
             <input type="hidden" name= "ticketId" value="<?php echo $ticket_id ?>"/>
             <input type="hidden" name= "userId" value="<?php echo $_SESSION['userId']?>"/>
@@ -106,7 +106,7 @@
         </form>
     </div>
     
-    <?php include('footer.php')?>
+    <?php include('../templates/footer.php')?>
 </body>
-<script src ="scripts/date.js"></script>
+<script src ="../scripts/date.js"></script>
 </html>

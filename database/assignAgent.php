@@ -14,6 +14,6 @@ $agent = $_POST['agent'];
 $ticket_id = $_POST['ticket_id'];
 
 assignAgent($agent, $ticket_id);
-header('Location: ../ticketPage.php?ticketId='.$ticket_id.'');
+header('Location: ../pages/ticketPage.php?ticketId='.$ticket_id.'');
 
 ?>

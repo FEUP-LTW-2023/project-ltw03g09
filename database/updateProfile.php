@@ -4,7 +4,7 @@ session_start(); // start a new session
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     // user isn't logged in, redirect to login page
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 
@@ -29,5 +29,5 @@ $_SESSION['email'] = $email;
 $_SESSION['image'] = $image;
 
 
-header('Location: ../profilePage.php')
+header('Location: ../pages/profilePage.php')
 ?>

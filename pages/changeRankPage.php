@@ -1,9 +1,9 @@
 <?php 
     session_start();
-    require_once('database/connection.php');
-    require_once('database/getUsers.php');   
+    require_once('../database/connection.php');
+    require_once('../database/getUsers.php');   
 
-    $db = getDatabaseConnection('database/');
+    $db = getDatabaseConnection('../database/');
     $users = getUsers($db);
 
 
@@ -11,22 +11,22 @@
 
 <!DOCTYPE html>
 <html>
-<script src ="scripts/removeAgentDepartment.js"></script>
-<script src ="scripts/departments.js"></script>
+<script src ="../scripts/removeAgentDepartment.js"></script>
+<script src ="../scripts/departments.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <head>
     <title>Homepage</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/changeRankPage.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/changeRankPage.css" rel="stylesheet">
 </head>
 <body>
-    <?php include('header.php')?>
+    <?php include('../templates/header.php')?>
     <h2>Change Rank</h2>
     <div class='userList bigSquare'>
         <?php 
             foreach($users as $user){
         ?>
-            <form class="userBanner" method="post" action="database/changeRank.php">
+            <form class="userBanner" method="post" action="../database/changeRank.php">
             <div style="display: flex;justify-self:stretch" onclick="window.location.href='profilePage2.php?user_id=<?php echo $user['user_id']?>'">
                 <img class="profileIcon" src="<?php echo $user['image']?>">
                 <p style="grid-column: 1"><?php echo $user['username']?></p>
@@ -45,6 +45,6 @@
             }
         ?>
     </div>
-    <?php include('footer.php')?>
+    <?php include('../templates/footer.php')?>
 </body>
 </html>

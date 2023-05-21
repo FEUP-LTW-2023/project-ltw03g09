@@ -40,7 +40,7 @@ const assignAgentUI = (ticketId,agent_id) => {
                 if(status === "open"){
                     var html = `
                         <p>assign agent:</p>
-                        <form action='database/assignAgent.php' method='post'>
+                        <form action='../database/assignAgent.php' method='post'>
                             <select id='agent' class='profileTextbox' name='agent'>
                                 <option value='' disabled selected>--</option>
                     `;

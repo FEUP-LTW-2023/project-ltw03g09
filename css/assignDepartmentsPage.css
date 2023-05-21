@@ -26,7 +26,7 @@ h2 {align-self: center;}
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .bigSquare{
         width: 90%;
         margin: 0em;
@@ -39,7 +39,7 @@ h2 {align-self: center;}
     .userBanner{
         overflow:scroll;
         display:flex;
-        gap: 10px;
+        gap: 20px;
     }   
     .addDepartment > .userBanner{
         flex-direction: column;

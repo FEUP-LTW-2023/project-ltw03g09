@@ -311,8 +311,6 @@ margin-top: auto;
   
   @font-face {
     font-family: 'Space Mono';
-    src: url('path/to/space-mono.woff2') format('woff2'),
-         url('path/to/space-mono.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }

@@ -2,7 +2,7 @@
 
 function fetchTickets($user_id){
 
-    $db = new PDO('sqlite:database/data.db');
+    $db = new PDO('sqlite:../database/data.db');
 
     $query = "select distinct ticket.*, user.username, user.image from ticket, agent, user, agentDepartment
             where user.id = ticket.creator and (
