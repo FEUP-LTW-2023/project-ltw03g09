@@ -8,6 +8,9 @@ unset($_SESSION['agent_id']);
 unset($_SESSION['admin_id']);
 unset($_SESSION['departments']);
 
+session_destroy();
+
+
 // redirect to login page
 header('Location: index.php');
 exit;

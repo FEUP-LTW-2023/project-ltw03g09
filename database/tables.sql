@@ -14,7 +14,7 @@ CREATE TABLE User (
     id		INTEGER PRIMARY KEY,
     username 	VARCHAR(50),
     name 	VARCHAR(50),
-    password 	VARCHAR(50),
+    password 	VARCHAR(500),
     email 	VARCHAR(50),
     image     VARCHAR(500)
 );

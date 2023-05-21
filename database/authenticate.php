@@ -2,6 +2,12 @@
 
 function authenticate($username, $password){
     
+	$hash = password_hash($password, PASSWORD_DEFAULT);
+
+	error_log("hash:".$hash);
+	error_log(password_verify($password, $hash));
+if(password_verify($password, $hash)) error_log("popo");
+
     require_once('connection.php');
 
     $db = getDatabaseConnection();
@@ -10,13 +16,15 @@ function authenticate($username, $password){
 		from user
 		LEFT JOIN agent ON user.id = agent.user_id
 		LEFT JOIN admin ON agent.id = admin.agent_id
-		WHERE user.username = ? AND user.password = ?");
-    $stmt->execute(array($username, $password));
+		WHERE user.username = ?");
+    $stmt->execute(array($username));
     $user = $stmt->fetch();
 
 	$db = null;
 
-    if($user){
+    if($user && password_verify($password, $hash)){
+
+
 		$_SESSION['username'] = $username;
 		$_SESSION['loggedin'] = true;
 		$_SESSION['name'] = $user['name'];

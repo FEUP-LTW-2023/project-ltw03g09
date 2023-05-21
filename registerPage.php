@@ -26,6 +26,9 @@
         <input type="text" name="name" id="name">
         <label for="email">EMAIL</label>
         <input type="text" name="email" id="email">
+        <label for="image">IMAGE</label>
+        <input type="text" name="image" id="image">
+
         <input type="submit" name="submit" value="REGISTER">
       </form>
     </div>
