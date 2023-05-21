@@ -28,6 +28,7 @@ INSERT INTO Department VALUES
 INSERT INTO AgentDepartment (agent_id, department) VALUES
   (3,'TaxFraud'),
   (3,'Accounting'),
+  (3,'HR'),
   (2, 'HR'),
   (2, 'TaxFraud');
   
@@ -44,5 +45,3 @@ INSERT INTO AgentDepartment (agent_id, department) VALUES
   (5, 'Suspeita de Fraude Fiscal', 'Estou escrevendo para apresentar uma reclamação formal em relação a uma possível fraude fiscal que recentemente afetou minha situação financeira. Gostaria de relatar os eventos ocorridos e solicitar uma investigação imediata. Recebi um aviso do órgão de arrecadação de impostos informando que minha declaração de imposto de renda foi rejeitada devido a discrepâncias nos dados fornecidos. Fiquei extremamente preocupado(a) com essa notificação, uma vez que sempre prestei muita atenção e forneci informações precisas em todas as minhas declarações fiscais. Após minhas próprias investigações, descobri que houve uma possível utilização indevida de meus dados pessoais para a apresentação de uma declaração fraudulenta em meu nome. Essa ação prejudicial não apenas comprometeu minha situação financeira, mas também afetou minha confiança no sistema tributário.Solicito encarecidamente que o Departamento de TaxFraud conduza uma investigação aprofundada sobre esse incidente. Peço que examinem minhas informações fiscais e tomem medidas apropriadas para corrigir qualquer irregularidade detectada. Além disso, gostaria de ser informado(a) sobre os desdobramentos da investigação e das medidas tomadas para prevenir futuras ocorrências.Anexo a esta carta, você encontrará cópias de minhas declarações fiscais, bem como qualquer outra evidência relevante que possa auxiliar na investigação.Agradeço antecipadamente sua atenção e espero uma resolução satisfatória para essa situação o mais breve possível.', 4, 'open', 'TaxFraud', 'urgent', '#hashtag', 3, 543289070),
 
   (6, 'Muito Bem', 'Ótimo trabalho, merece 20', 6, 'open', 'HR', 'urgent', '#perfeição', 7, 1684944300);
-
-
