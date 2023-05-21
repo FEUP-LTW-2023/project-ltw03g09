@@ -1,26 +1,26 @@
 <?php 
     session_start();
-    require_once('database/connection.php');
-    require_once('database/getUsers.php');   
+    require_once('../database/connection.php');
+    require_once('../database/getUsers.php');   
 
-    $db = getDatabaseConnection('database/');
+    $db = getDatabaseConnection('../database/');
 
 ?>
 
 
 <!DOCTYPE html>
 <html>
-<script src ="scripts/removeAgentDepartment.js"></script>
-<script src ="scripts/departments.js"></script>
+<script src ="../scripts/removeAgentDepartment.js"></script>
+<script src ="../scripts/departments.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <head>
     <title>Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/assignDepartmentsPage.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/assignDepartmentsPage.css" rel="stylesheet">
 </head>
 <body>
-    <?php include('header.php')?>
+    <?php include('../templates/header.php')?>
     <div class='agentDepartments bigSquare'>
         <h2>Assign Departments</h2>
         <?php
@@ -73,7 +73,7 @@
         <div class="addRemoveDepartment">
             <div class="departmentList" style="display:flex;flex-direction:column;justify-content:center;color:#fff;padding:10px;">
                     <?php 
-                        require_once('database/fetchDepartments.php');
+                        require_once('../database/fetchDepartments.php');
                         $departments = fetchDepartments();
 
                         foreach($departments as $department){
@@ -97,6 +97,6 @@
         </div>
     </div>
 
-    <?php include('footer.php')?>
+    <?php include('../templates/footer.php')?>
 </body>
 </html>

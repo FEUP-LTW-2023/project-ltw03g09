@@ -23,6 +23,6 @@
     $stmt = $db->prepare($query);
     $stmt->execute(array($title,$text,$userId,$department,$label, $date));
     
-    header('Location: ../ticketListPage.php');
+    header('Location: ../pages/ticketListPage.php');
 
 ?>

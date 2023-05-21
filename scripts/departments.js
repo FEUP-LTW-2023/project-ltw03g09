@@ -12,7 +12,13 @@ const addDepartment = () => {
             const newDepartment = document.createElement('span');
             newDepartment.setAttribute("class", "departmentSpan");
             newDepartment.setAttribute("onclick", "removeDepartment('" + department + "',this)");
-            newDepartment.innerHTML = department;
+            newDepartment.textContent = department;
+
+            const close = document.createElement('i');
+            close.setAttribute("style", "color:#007bff");
+            close.setAttribute("class", "fas fa-times");
+            
+            newDepartment.appendChild(close);
 
             document.querySelector('.departmentList').appendChild(newDepartment)
             

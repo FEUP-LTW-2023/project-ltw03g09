@@ -2,7 +2,7 @@
 
 function fetchDepartments(){
     require_once('connection.php');
-    $db = getDatabaseConnection('database/');
+    $db = getDatabaseConnection('../database/');
 
     $stmt = $db->prepare('SELECT * FROM Department');
     $stmt->execute();

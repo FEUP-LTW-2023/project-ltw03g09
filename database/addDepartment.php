@@ -8,7 +8,7 @@
     $stmt = $db->prepare('insert into department values (?)');
     $stmt->execute(array($department));
 
-    header('Location: ../adminPage.php');
+    header('Location: ../pages/assignDepartmentsPage.php');
 
 
 

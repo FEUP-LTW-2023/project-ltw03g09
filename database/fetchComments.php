@@ -2,9 +2,9 @@
 
 function fetchComments($ticket_id){
 
-    require_once('database/connection.php');
+    require_once('../database/connection.php');
 
-    $db = getDatabaseConnection('database/');
+    $db = getDatabaseConnection('../database/');
 
     $query = "select comment.*, user.username, user.image from comment, user where ticket_id = ? and comment.user_id = user.id";
 

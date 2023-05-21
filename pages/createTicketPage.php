@@ -9,7 +9,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 }
 
-require_once('database/fetchDepartments.php');
+require_once('../database/fetchDepartments.php');
 $departments = fetchDepartments();
 
 ?>
@@ -18,8 +18,8 @@ $departments = fetchDepartments();
 <html>
 <head>
     <title>Ticket page</title>
-    <link href="css/style.css" rel="stylesheet"/>
-    <link href="css/createTicketPage.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/createTicketPage.css" rel="stylesheet"/>
 </head>
 <style>
 ::placeholder{
@@ -27,11 +27,11 @@ $departments = fetchDepartments();
 }
 </style>
 <body>
-<?php include('header.php')?>
+<?php include('../templates/header.php')?>
     <h1>Ticket creation</h1>
     <p>This is where tickets are created</p>
 
-    <form class="bigSquare" action="database/createTicket.php" method="post">  
+    <form class="bigSquare" action="../database/createTicket.php" method="post">  
         <h2 style="align-self: center">Create a Ticket</h2>
 	    <input type="text" name="title" class="profileTextbox" placeholder="title">
         <div style="display: flex;flex-direction: row;">
@@ -55,6 +55,6 @@ $departments = fetchDepartments();
     console.log(currentDate)
     document.getElementById("currentdate").value = dateString;
     </script>
-    <?php include('footer.php')?>
+    <?php include('../templates/footer.php')?>
 </body>
 </html>

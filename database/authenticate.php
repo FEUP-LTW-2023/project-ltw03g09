@@ -57,7 +57,7 @@ if(password_verify($password, $hash)) error_log("popo");
 
 		
 		echo "logged in";
-		header('Location: ../home.php');
+		header('Location: ../pages/home.php');
 		exit;
     }else{
 		echo "invalid username or password";

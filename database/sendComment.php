@@ -2,7 +2,7 @@
 
 function sendComment($text, $ticket_id, $user_id){
     require_once('connection.php');
-    $db = getDatabaseConnection();
+    $db = getDatabaseConnection('../database/');
 
     $query = "INSERT INTO Comment (text, ticket_id, user_id, date) VALUES (?,?,?,?)";
 
@@ -20,6 +20,6 @@ $ticket_id = $_POST['ticketId'];
 $user_id = $_POST['userId'];
 
 sendComment($text, $ticket_id, $user_id);
-header('Location: ../ticketPage.php?ticketId='.$ticket_id)
+header('Location: ../pages/ticketPage.php?ticketId='.$ticket_id)
 
 ?>
